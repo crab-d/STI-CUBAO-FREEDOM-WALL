@@ -1,0 +1,19 @@
+.primary-text {
+    color: #38b6ff !important;
+}
+
+.text-secondary {
+    color: #007dc6;
+}
+
+.primary-color {
+    background-color: #38b6ff !important;
+}
+
+.secondary-color {
+    background-color: #0071b4 !important;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

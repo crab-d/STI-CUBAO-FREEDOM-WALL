@@ -1,0 +1,16 @@
+.frontLogo {
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    border: 1px solid red;
+}
+
+.FrontImage {
+    height: 30vw;
+    width: 40vw;
+}
+
+.FrontSection {
+    background: #ffffff;
+    background: linear-gradient(168deg, rgb(242, 241, 241) 87%, rgba(0, 183, 255, 1) 87%);
+}

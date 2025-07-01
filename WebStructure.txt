@@ -1,0 +1,28 @@
+Public
+-- About
+-- Why
+-- When
+-- Who
+-- Contact
+
+User
+-- Dashboard
+-- New message
+-- Search message
+-- Message history
+-- Remove message
+-- Message viewers
+
+Admin
+-- Dashboard
+-- Ban section
+-- Monitoring Panel
+-- Post Announcement
+-- SMS message for reported message
+
+Message Structure
+SUBJECTS: Rants, Confession, Random Question, Lost and Found.
+-- To
+-- Message
+-- Date 
+-- 

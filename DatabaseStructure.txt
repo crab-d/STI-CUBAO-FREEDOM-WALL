@@ -1,0 +1,25 @@
+User
+-- AccountID | Int - PrimaryKey - AutoIncrement
+-- Email (Cubao tenant) | Varchar
+-- Status | Enum (User, Admin)
+-- Section | Varchar
+-- Active | Bool
+
+Message
+-- MessageID | Int - PrimaryKey - AutoIncrement
+-- SenderID | Int - ForeignKey (AccountID) - not null
+-- Subject | Enum (Rants, Confession, Random Message, Lost and Found) - not null
+-- MessageTo | Varchar - null
+-- Message | Text - not null
+-- DateSent | Varchar (Convert Current PH Date and Time to readable format) - not null
+-- Viewers | Text (Update each time user click that message) - null
+-- Active | Bool
+
+Announcement
+-- AnnouncementID | Int - PrimaryKey - AutoIncrement
+-- Title | Varchar - null
+-- Message | Text - not null
+-- DateAnnounced | Varchar - not null
+-- 
+
+

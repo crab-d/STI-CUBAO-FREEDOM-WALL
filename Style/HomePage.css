@@ -14,3 +14,15 @@
     background: #ffffff;
     background: linear-gradient(168deg, rgb(242, 241, 241) 87%, rgba(0, 183, 255, 1) 87%);
 }
+
+.about-logo {
+    height: 30vh;
+    width: 30vh;
+}
+
+.homepage-bg-about {
+    background-position: center;
+    background-repeat: no-repeat;
+   background-image: url("../Resources/Image/HP_BG.png");
+   background-attachment: fixed;
+}

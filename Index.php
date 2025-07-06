@@ -1,7 +1,7 @@
 <?php
 // index.php
 
-$url = $_GET['url'] ?? 'Public/LandingPage';
+$url = $_GET['url'] ?? 'Public/HomePage';
 
 $url = strtolower($url);
 

@@ -6,6 +6,6 @@
             </div>
         </div>
         <div class="col-6 d-flex align-items-center justify-content-end">
-            <button class="btn btn-outline-primary z-1"><a href="Public/LoginPage" class="">Logsin</a></button>
+            <a href="../index.php" class="m-0 text-decoration-none btn btn-outline-primary z-1" >Login</a>
         </div>
     </header>

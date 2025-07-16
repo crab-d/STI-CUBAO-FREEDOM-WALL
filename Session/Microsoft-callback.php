@@ -1,7 +1,7 @@
 <?php
-$clientId = 'YOUR_CLIENT_ID';
-$clientSecret = 'YOUR_CLIENT_SECRET';
-$redirectUri = 'http://localhost/microsoft-callback.php';
+$clientId = 'f4af1976-bef7-4b29-9b72-585a9333a99b';
+$clientSecret = 'nr28Q~uedYXut6CbyipJKra_p8RBngGZm8BvWaV2';
+$redirectUri = 'http://localhost/STI_FW/Session/microsoft-callback.php';
 
 if (isset($_GET['code'])) {
     $code = $_GET['code'];
@@ -30,7 +30,7 @@ if (isset($_GET['code'])) {
     $accessToken = $tokenData['access_token'] ?? null;
 
     if ($accessToken) {
-        // Get user info
+        
         $ch = curl_init('https://graph.microsoft.com/v1.0/me');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
@@ -40,13 +40,27 @@ if (isset($_GET['code'])) {
         curl_close($ch);
 
         $user = json_decode($userInfo, true);
+        session_start();
+        
 
-        echo '<pre>';
-        print_r($user);
-        echo '</pre>';
+        $_SESSION['firstName'] = $user['givenName'];
+        $_SESSION['lastName'] = $user['surname'];
+        $_SESSION['email'] = $user['mail'];
+        $_SESSION['isLoggedIn'] = true;
+        
+        header('Location: ../User/UserRegistration.php');
+
+     
+        // echo '<pre>';
+        // print_r($user);
+        // echo '</pre>';
     } else {
-        echo 'Failed to get access token.';
-    }
+    echo 'Failed to get access token.<br>';
+    echo '<pre>';
+    print_r($tokenData);
+    echo '</pre>';
+}
+
 } else {
     echo 'No code received.';
 }

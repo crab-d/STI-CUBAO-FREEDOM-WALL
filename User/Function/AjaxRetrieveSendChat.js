@@ -1,91 +1,101 @@
-$(document).ready(function() {
-    let Page = 1;
+$(document).ready(function () {
+    const chatContainer = $('#chatContents'); //Reference to chat container
+    const scrollContainer = $('#PublicChatBody'); //reference to chat main body
+    const bannedWords = [
+        "porn"
+    ];
+    let page = 0;
     let isLoading = false;
+    let lastChatId = 0; // hold last message data id 
 
+    //Do after sending message
+    function scrollToBottom() {
+        const container = scrollContainer[0];
+        if (container) {
+            container.scrollTop = container.scrollHeight;
+        }
+    }
+
+    //Filter message
+    function inappropriateWordChecker(content) {
+        return bannedWords.some(word =>
+            content.toLowerCase().includes(word.toLowerCase())
+        );
+    }
+
+    //dynamically load content through ajax
     function loadChats() {
         if (isLoading) return;
         isLoading = true;
-        
-        $.ajax({
-            url: '../User/Function/RetrieveMessage.php?t=' + new Date().getTime(),
-            type: 'GET',
-            success: function(response) { 
-                $('#chatContents').html(response);
-                console.log('Chats loaded!');
-            },
-            error: function(xhr, error) {
-                $('#chatContents').html('Error ' + xhr.status + ' - ' + error);
-                console.log('Chat not load');
-            }
-        })
-    }
 
-    function sendChat(ChatContent) {
-        console.log('sendChat log');
         $.ajax({
-            url: '../User/Function/SendMessage.php',
-            type: 'POST',
-            
+            url: "../User/Handler/RetrieveMessage.php",
+            type: "GET",
+            dataType: "json",
             data: {
-                chatContent: ChatContent,
+                last_chat_id: lastChatId,
+                Page: page,
             },
-            success: function() {
-                $('#chatContents').val('');
-                setTimeout(function () {
-                    loadChats();
-                }, 3000);
+            success: function (response) {
+                if (response.content) {
+                    chatContainer.append(response.content);
+                    const lastMsg = chatContainer.children().last();
+                    lastChatId = lastMsg.data('chat-id') || lastChatId;
+                    scrollToBottom();
+                }
             },
-            error: function(xhr, error) {
-                $('#chatContents').html('Error ' + xhr.status + ' - ' + error);
-                console.log('failed log');
-            }
-        })
+            error: function (xhr, error) {
+                 console.log('ERROR' + xhr.status + "  " + xhr)
+            },
+            complete: function () {
+                isLoading = false;
+                loadChats();
+            },
+            timeout: 35000
+        });
     }
 
-         
-   
-
-    $('#BTN_chatSend').click(function() {
-        console.log('click')
-        let chatContent = $('#IPT_chatContent').val().trim();
-        if (chatContent === '') return;
-        if (inappropriateWorkChecker(chatContent)) {
-            return '<div class="alert alert-danger">  Please be mindful with your words. </div> ';
+    function sendChat(content) {
+        if (!content || inappropriateWordChecker(content)) {
+            alert("Please be mindful with your words.");
+            return;
         }
-        sendChat(chatContent);
+
+        $.ajax({
+            url: "../User/Handler/SendMessage.php",
+            type: "POST",
+            data: { chatContent: content },
+            success: function () {
+                $('#IPT_chatContent').val('');
+                // No need to reload messages here, long polling will get it
+            },
+            error: function (xhr, error) {
+                console.error(`Error ${xhr.status} - ${error}`);
+            },
+            complete: function () {
+                setTimeout(scrollToBottom, 300);
+            }
+        });
+    }
+
+    $('#BTN_chatSend').on('click', function () {
+        const content = $('#IPT_chatContent').val().trim();
+        if (content === "") return;
+        sendChat(content);
     });
 
-    loadChats()
-    function inappropriateWorkChecker(chatContent){
-        let bannedWord = [
-            // English sexual/inappropriate
-            'sex', 's3x', 'porn', 'pornhub', 'xxx', 'nude', 'naked', 'boobs', 'tits',
-            'pussy', 'dick', 'cock', 'penis', 'vagina', 'anal', 'oral', 'cum', 'jerk', 'jerking', 'masturbate', 'masturbation', 'orgasm', 'hentai',
+    $('#PublicChatBody').on('scroll', function() {
+        let scrollTop = $(this).scrollTop();
+        console.log(scrollTop)
+        if (scrollTop <= 0) {
+            console.log("TEST TOP")
+            console.log(page)
 
-            // Filipino sexual/inappropriate
-            'kantot', 'kantutan', 'tite', 'pepe', 'puke', 'putotoy', 'etits', 'ari', 'utong',
-
-            // Filipino curse words
-            'gago', 'tanga', 'ulol', 'bobo', 'punyeta', 'lintik', 'leche', 'bwisit', 'hayop', 'putangina', 'pakshet', 'putang ina', 'putang-ina',
-
-            // English curse/swears
-            //'fuck', 'shit', 'bitch', 'asshole', 'bastard', 'dumbass', 'slut', 'whore', 'fucker', 'motherfucker', 'piss', 'crap', 'damn',
-
-            // Spelling variants / leetspeak
-            //'fck', 'fuk', 'f*ck', 'f@ck', 'sh1t', 'b1tch', 'b!tch', 'fckr', 's3x', 'p0rn', 'kntt', 'pnus', 'pniss'
-            ];
-
-        let CheckWord = bannedWord.some(word => 
-            chatContent.toLowerCase().includes(word.toLowerCase())
-        )
-        
-        if (CheckWord) {
-            return true;
-        } else {
-            return false;
+            page++
+            loadChats()
         }
-    }
+    })
 
- 
-
-})
+    //Initial long polling message req
+    loadChats();
+});

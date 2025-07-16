@@ -11,7 +11,7 @@ include '../Session/SessionChecker.php';
     <link rel="icon" type="image/x-icon" href="../Resources/Image/Logo.jpg"/>
     <link rel="stylesheet" href="../Style/Style.css"/>
      <link rel="stylesheet" href="../Resources/Font/Poppins.css"/>
-    <link rel="stylesheet" href="./Resources/Font/Poppins.css"/>
+    <link rel="stylesheet" href="../Resources/Font/Poppins.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>

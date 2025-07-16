@@ -1,7 +1,7 @@
 <?php
 
 include '../User/Components/UserMetaData.php';
-include '../User/Function/CreatePost.php';
+include '../User/Handler/CreatePost.php';
 
 
 $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
@@ -83,6 +83,7 @@ if (!isset($_SESSION['is_active'])) {
             </div>
 
             <div id="response" class="w-100 d-flex justify-content-center flex-column text-center align-items-center">
+                
             </div>
             <div id="loading" style="display: none; text-align: center;" class="d-flex justify-content-center ">
                 <p>Loading more post</p>
@@ -109,13 +110,9 @@ if (!isset($_SESSION['is_active'])) {
                     
                 </div>
 
-                <div id="PublicChatAction" class=" d-flex w-100 mb-1 p-2">
-                   
+                <div id="PublicChatAction" class=" d-flex w-100 mb-1 p-2">   
                     <input id="IPT_chatContent" name="chat_content" type="text" class="bg-white rounded border-0 shadow-sm flex-grow-1 border-1 ps-2" placeholder="Type a Message">
-                    <button id="BTN_chatSend" name="send_message" type="submit" class="primary-color btn text-white shadow-sm">Send</button>
-                    <button id="refresh" name="send_message" type="submit" class="primary-color btn text-white shadow-sm">refresh</button>
-
-                  
+                    <button id="BTN_chatSend" name="send_message" type="submit" class="primary-color btn text-white shadow-sm">Send</button>  
                 </div>
             </div>
         </div>
@@ -125,6 +122,8 @@ if (!isset($_SESSION['is_active'])) {
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
     <script src="../User/Function/AjaxRetrievePost.js"></script>
     <script src="../User/Function/AjaxRetrieveSendChat.js"></script>
+    <script src="../User/Function/LikePost.js"></script>
+
     <script>
   window.onload = function () {
     const body = document.getElementById("body");
@@ -133,10 +132,10 @@ if (!isset($_SESSION['is_active'])) {
       const scrollHeight = container.scrollHeight;
       container.scrollTop = scrollHeight;
 
-    }, 100);
+    }, 1320);
     setTimeout(() => {
         body.style.opacity = 100;
-    }, 150)
+    }, 1350)
   };
 </script>
 </body>

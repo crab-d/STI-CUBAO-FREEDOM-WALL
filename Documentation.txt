@@ -4,3 +4,43 @@ July 2 2025
 
 July 4 2025
 - Detailing HomePage
+
+-- been busy with sti roblox but made an update along the way such as logging system, developing database styling dashboard etc -- 
+
+July 15 2025
+- Make posting and retrieving post functional
+
+July 16 2025
+- Make public chat functional with long polling
+
+July 17 2025
+- Handling user liking post event
+
+
+==================
+
+WAITLIST:
+Post commenting function
+chat liking function
+chat reply function
+user profile 
+delete post (just hide it)
+update post
+Public announcement
+notification
+post reporting (if reach 5+ report with unique ID automatically hide post) 
+chat reporting (if reach 5+ report with unique ID automatically hide post) 
+Use DB for modifying contents (Initial admin panel)                            
+
+__ SOFTLAUNCH JUL 25 2025 __
+ADDITIONAL FOLLOW UP FEATURES:
+                                                                                                                                                                                                                                                                                                                                                                                   
+
+comment section long polling
+admin dashboard 
+turning off public chat function
+Push notification
+android app web view version
+content algorithm
+....
+

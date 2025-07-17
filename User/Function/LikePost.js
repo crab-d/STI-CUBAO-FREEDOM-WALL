@@ -1,20 +1,32 @@
 $(document).ready(function() {
   $('#response').on('click', '.like_post', function() {
-    let postId = $(this).closest('.user_post').data('post-id');
-    let currentLike = $(this).closest('.like_post').find('span').text();
-    console.log("Like clicked on post id:", postId);
-    console.log("Like  on post id:", currentLike);
+    const likeElement = $(this); // save reference
+    const postId = likeElement.closest('.user_post').data('post-id');
+    let currentLike = parseInt(likeElement.find('span').text());
+
+    if (likeElement.hasClass('disabled-like')) {
+      return;
+    }
 
     $.ajax({
         url: '../User/Handler/LikePostHandler.php',
         type: 'POST',
+ 
         data: {
             post_id: postId,
         },
         success: function(response) {
-            if (response) {
+          console.log('success')
+         
+              currentLike++;
+              likeElement.find('span').text(currentLike);
+              likeElement.addClass('disabled-like')
 
-            }
+        },
+        error: function(xhr, error) {
+          console.log('error' + xhr.status + ' ' + error)
+            
+              
         }
     })
 

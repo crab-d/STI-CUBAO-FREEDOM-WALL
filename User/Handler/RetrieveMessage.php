@@ -12,7 +12,7 @@ $limit = 40;
 $offset = ($page - 1) * $limit;
 
 $startTime = time();
-$timeout = 600;
+$timeout = 6000;
 $content = '';
 
 do {

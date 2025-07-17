@@ -45,13 +45,13 @@ $(document).ready(function () {
                 }
             },
             error: function (xhr, error) {
-                 console.log('ERROR' + xhr.status + "  " + xhr)
+                //  console.log('ERROR' + xhr.status + "  " + xhr)
             },
             complete: function () {
                 isLoading = false;
                 loadChats();
             },
-            timeout: 35000
+            timeout: 600000
         });
     }
 

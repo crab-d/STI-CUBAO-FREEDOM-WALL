@@ -61,7 +61,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     }
     
     $htmlContent .= '
-    <div data-post-id="' . $row['post_id'] . '" class="user_post bg-light rounded-2 shadow-sm border m-2 p-0 w-75 d-flex flex-column overflow-hidden container flex-shrink-0">
+    <div data-post-id="' . $row['post_id'] . '" class="user_post bg-light rounded-2 shadow-sm border my-2 p-0 col-12 col-lg-9 d-flex flex-column overflow-hidden container flex-shrink-0">
         <div id="PostCard_Header" class="bg-light m-0 d-flex justify-content-between p-2">
             <p class="m-0">' . getUserDisplayName($row["account_id"]) . '</p>
  
@@ -88,7 +88,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             Comment <span class="rounded text-white poppins-medium primary-color p-1" style="height:10px; width:10px;">' . getPostCommentCount($row['post_id']) . '</p>
 
                 <div id="commentSectionModal-id-'. $row['post_id'] .'" aria-hidden="false" class="modal fade" tabindex="-1"  >
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-lg-down">
                         <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Comment</h5>

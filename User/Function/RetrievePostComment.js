@@ -1,7 +1,7 @@
 $(document).ready(() => {
     
     
-        
+
     $('#response').on('click','.comment_post', function() {
         $post_id = $(this).closest('.user_post').data('post-id');  
         loadComments($post_id)
@@ -29,6 +29,7 @@ $(document).ready(() => {
         $comment_content = $(this).find('#comment_input').val();
         $post_id = $(this).find('input[name="post_id"]').val();
         sendComment($comment_content, $post_id)
+        $comment_content = text ('');
     })
 
     function sendComment($comment_content, $post_id) {

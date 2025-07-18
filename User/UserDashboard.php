@@ -13,11 +13,27 @@ if (!isset($_SESSION['is_active'])) {
 ?>
 
 
-<body id="body" class="poppins-regular" style="opacity: 0">
+<body id="body" class="poppins-regular" style="opacity: 0;">
+    
+
     <div class="container-fluid row m-0 p-0">
+        
         <!-- FIRST COL -->
-        <div class="col-3 bg-white m-0 p-0 vh-100 ">
-            <div class="p-2  d-flex flex-column vh-100">
+        <div id="col1" class="col-sm-12 d-none col-lg-3 d-lg-block bg-white m-0 p-0 vh-100 ">
+             
+            <div class=" d-flex flex-column vh-100">
+                 <div style="backdrop-filter: blur(100px); background: rgba(255, 255, 255, 0.7);" class="d-block d-lg-none p-2 border-bottom border-dark-subtle w-100 sticky-top  d-flex justify-content-between align-items-center m-0">
+                    <div>
+                        <p class="poopins-medium text-dark fw-bold m-0">SCFW</p>
+                    </div>
+                    <div class="d-flex justify-content-end gap-4">
+                        <div><i class="bi tab_content bi-file-post-fill"></i></div>
+                        <div ><i class="public_chat bi bi-chat-square-dots-fill"></i></div>
+                        <div  class="tab_menu primary-color rounded"><i class="bi text-white bi-list"></i></div>
+
+                    </div>
+                </div>
+                <div class="p-2 d-flex flex-column vh-100">
                 <p class="primary-text poppins-medium">STI CUBAO FREEDOM WALL</p>
                 <div id="profile" style="cursor: pointer;" class="bg-light shadow-sm rounded overflow-hidden d-flex align-items-center">
                     <div class="primary-color p-2"><i class="bi m-0 bi-person-square text-white"></i></div>
@@ -40,14 +56,27 @@ if (!isset($_SESSION['is_active'])) {
                     <a class="text-decoration-none w-100 yellow-color btn shadow-sm border-1 border-black" href="../Session/Logout.php">Logout</a>
                 </div>
             </div>
+            </div>
         </div>
 
         <!-- SECOND COL -->
-        <div id="MainBody" class="col-6 d-flex flex-column align-items-center bg-light vh-100 overflow-scroll m-0">
+        <div id="MainBody" class="col2 col-12 col-lg-6 d-block d-flex p-0 flex-column align-items-center bg-light vh-100 overflow-scroll m-0">
+            <div style="backdrop-filter: blur(100px); background: rgba(255, 255, 255, 0.7);" class="d-block d-lg-none p-2 border-bottom border-dark-subtle w-100 sticky-top  d-flex justify-content-between align-items-center m-0">
+        <div>
+            <p class="poopins-medium text-dark fw-bold m-0">SCFW</p>
+        </div>
+        <div class="d-flex justify-content-end gap-4">
+            <div ><i class="tab_content bi bi-file-post-fill"></i></div>
+            <div ><i class="public_chat bi bi-chat-square-dots-fill"></i></div>
+            <div class="tab_menu primary-color rounded"><i class="bi text-white bi-list"></i></div>
 
-            <div class="bg-light rounded-2 shadow-sm border m-2 p-0 w-75 d-flex border border-info">
+        </div>
+    </div>  
+
+
+            <div class="bg-light rounded-2 shadow-sm border col-12 col-sm-9 p-0 mt-2 d-flex border border-info">
                 <button type="button" class="btn w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Create a post
+                    Create post in a wall
                 </button>
 
                 <form action="#" method="POST">
@@ -82,7 +111,7 @@ if (!isset($_SESSION['is_active'])) {
 
             </div>
 
-            <div id="response" class="w-100 d-flex justify-content-center flex-column text-center align-items-center">
+            <div id="response" class="w-100  m-0 p-0 d-flex justify-content-center flex-column text-center align-items-center">
                 
             </div>
             <div id="loading" style="display: none; text-align: center;" class="d-flex justify-content-center ">
@@ -94,9 +123,21 @@ if (!isset($_SESSION['is_active'])) {
         </div>
 
         <!-- THIRD COL -->
-        <div class="col-3 overflow-scroll bg-white m-0 p-0">
+        <div id="col3" class="col-12 d-none col-lg-3 d-lg-block overflow-scroll bg-white m-0 p-0">
+           
             <div class="bg-white d-flex flex-column align-items-center vh-100">
 
+             <div style="backdrop-filter: blur(100px); background: rgba(255, 255, 255, 0.7);" class="d-block d-lg-none p-2 border-bottom border-dark-subtle w-100 sticky-top  d-flex justify-content-between align-items-center m-0">
+                <div>
+                    <p class="poopins-medium text-dark fw-bold m-0">SCFW</p>
+                </div>
+                <div class="d-flex justify-content-end gap-4">
+                    <div><i class="tab_content bi bi-file-post-fill"></i></div>
+                    <div><i class="public_chat bi bi-chat-square-dots-fill"></i></div>
+                    <div class="tab_menu primary-color rounded"><i class="bi text-white bi-list"></i></div>
+
+                </div>
+            </div>  
                 <div id="PublicChatHeader" class="primary-color w-100">
                     <p class="text-center text-white m-0">Public Chat</p>
                 </div>
@@ -140,6 +181,54 @@ if (!isset($_SESSION['is_active'])) {
                 container.scrollTop = scrollHeight;
                 body.css('opacity', 1)
             }, 1000);
+        })
+
+        const public_chat = $('.public_chat');
+        const tab_menu = $('.tab_menu');
+        const tab_content = $('.tab_content');
+
+        public_chat.on('click', (e)=>{
+            $('#col3').addClass('d-block')
+            $('#col3').removeClass('d-none')
+
+            $('#col1').addClass('d-none')
+            $('#col1').removeClass('d-block')
+
+            $('.col2').addClass('d-none')
+            $('.col2').removeClass('d-block')
+        })
+
+        tab_menu.on('click', (e)=>{
+            $('#col1').addClass('d-block')
+            $('#col1').removeClass('d-none')
+
+            $('#col3').addClass('d-none')
+            $('#col3').removeClass('d-block')
+
+            $('.col2').addClass('d-none')
+            $('.col2').removeClass('d-block')
+        })
+
+        tab_content.on('click', (e)=>{
+            $('.col2').addClass('d-block')
+            $('.col2').removeClass('d-none')
+
+            $('#col1').addClass('d-none')
+            $('#col1').removeClass('d-block')
+
+            $('#col3').addClass('d-none')
+            $('#col3').removeClass('d-block')
+        })
+
+        $('button[name="postFilter"]').on('click', (e)=>{
+            $('.col2').addClass('d-block')
+            $('.col2').removeClass('d-none')
+
+            $('#col1').addClass('d-none')
+            $('#col1').removeClass('d-block')
+
+            $('#col3').addClass('d-none')
+            $('#col3').removeClass('d-block')
         })
 
 </script>

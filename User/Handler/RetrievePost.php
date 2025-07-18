@@ -63,7 +63,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     $htmlContent .= '
     <div data-post-id="' . $row['post_id'] . '" class="user_post bg-light rounded-2 shadow-sm border m-2 p-0 w-75 d-flex flex-column overflow-hidden container flex-shrink-0">
         <div id="PostCard_Header" class="bg-light m-0 d-flex justify-content-between p-2">
-            <p class="m-0">' . getPosterDisplayName($row["account_id"]) . '</p>
+            <p class="m-0">' . getUserDisplayName($row["account_id"]) . '</p>
  
             <p class="m-0">' . $row['post_date'] . '</p>
         </div>
@@ -84,7 +84,38 @@ while ($row = mysqli_fetch_assoc($result)) {
             </p>';
         }
 
-        $htmlContent .= '<p class="m-0">' . $row['comment_count'] . '</p>
+        $htmlContent .= '<p id="comment_post" style="cursor: pointer" class="m-0 comment_post" data-bs-toggle="modal" data-bs-target="#commentSectionModal-id-'.$row['post_id'].'"> 
+            Comment <span class="rounded text-white poppins-medium primary-color p-1" style="height:10px; width:10px;">' . getPostCommentCount($row['post_id']) . '</p>
+
+                <div id="commentSectionModal-id-'. $row['post_id'] .'" aria-hidden="false" class="modal fade" tabindex="-1"  >
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Comment</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="comment-section">
+                            </div>
+                        </div>
+                        <div class="">
+                        <form id="comment_form" class="d-flex justify-content-between p-2" >
+                        <input type="hidden" name="post_id" value="'. $row["post_id"] .'">
+                            <input id="comment_input"  class="w-100 m-0 rounded border-0 bg-light shadow-sm" placeholder="Comment as ' . getUserDisplayName($account_id) . '">
+                            <button id="comment_submit" class="btn primary-color text-white rounded shadow-sm m-1"  type="submit">Send</button>
+                        </form>
+                        <script>
+                            $("#commentForm").on("submit", function(e) {
+                                e.preventDefault();
+                            })
+                        </script>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
         </div>
     </div>';
 
@@ -96,8 +127,23 @@ echo json_encode([
     'count' => $rowCount
 ]);
 
+function getPostCommentCount($post_id) {
+    require '../../Database/db_connect.php';
+    $query = 'SELECT COUNT(*) AS total_comment FROM comment_post WHERE post_id = ?';
+    $stmt = mysqli_prepare($conn_contents, $query);
+    mysqli_stmt_bind_param($stmt, 'i', $post_id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $comment_post);
+    mysqli_stmt_fetch($stmt);
+    return $comment_post;
+}
 
-function getPosterDisplayName($account_id){
+function getPostComment($post_id) {
+    $query = 'SELECT COUNT(*) AS total_comment FROM comment_post WHERE post_id = ?';
+
+}
+
+function getUserDisplayName($account_id){
     require '../../Database/db_connect.php';
     $query = 'SELECT display_name FROM accounts WHERE account_id = ?';
     $stmt = mysqli_prepare($conn_accounts, $query);
@@ -138,3 +184,5 @@ function checkUserLikePost($post_id, $account_id) {
 }
 
 ?>
+
+ 

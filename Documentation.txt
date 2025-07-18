@@ -16,6 +16,14 @@ July 16 2025
 July 17 2025
 - Handling user liking post event
 
+July 18 2025
+- Handling post comment 
+- Add click listener to message button and add modal for each button 
+- Modify modal and change its content to user's comment
+- Add message button
+- Send message
+- Create table 
+- RetrieveMessageAjax function
 
 ==================
 

@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST['chatContent'])) {
     if (mysqli_stmt_execute($stmt)) {
        
     } else {
-        echo '<div class="alert alert-danger"> Something went wrong, please try again. If error persist contact STI FREEDOM WALL FB PAGE THANK YOU</div>';
        
     }
 } 

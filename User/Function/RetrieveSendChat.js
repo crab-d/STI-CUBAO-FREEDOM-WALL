@@ -67,7 +67,6 @@ $(document).ready(function () {
             data: { chatContent: content },
             success: function () {
                 $('#IPT_chatContent').val('');
-                // No need to reload messages here, long polling will get it
             },
             error: function (xhr, error) {
                 console.error(`Error ${xhr.status} - ${error}`);

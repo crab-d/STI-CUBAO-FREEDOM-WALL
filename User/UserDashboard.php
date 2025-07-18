@@ -2,7 +2,7 @@
 
 include '../User/Components/UserMetaData.php';
 include '../User/Handler/CreatePost.php';
-
+ 
 
 $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
 if (!isset($_SESSION['is_active'])) {
@@ -19,9 +19,9 @@ if (!isset($_SESSION['is_active'])) {
         <div class="col-3 bg-white m-0 p-0 vh-100 ">
             <div class="p-2  d-flex flex-column vh-100">
                 <p class="primary-text poppins-medium">STI CUBAO FREEDOM WALL</p>
-                <div class="bg-light shadow-sm rounded overflow-hidden d-flex align-items-center">
-                    <div class="primary-color p-3"></div>
-                    <p class="m-0 ms-2"><?php echo $Fullname ?></p>
+                <div id="profile" style="cursor: pointer;" class="bg-light shadow-sm rounded overflow-hidden d-flex align-items-center">
+                    <div class="primary-color p-2"><i class="bi m-0 bi-person-square text-white"></i></div>
+                    <p  class="m-0 ms-2"><?php echo $Fullname ?></p>
                 </div>
                 <div class=" mt-5 bg-light overflow-hidden shadow-sm rounded d-flex flex-column align-items-center">
                     <p class="primary-color w-100 text-center text-white">Chanels</p>
@@ -120,23 +120,28 @@ if (!isset($_SESSION['is_active'])) {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
-    <script src="../User/Function/AjaxRetrievePost.js"></script>
-    <script src="../User/Function/AjaxRetrieveSendChat.js"></script>
-    <script src="../User/Function/LikePost.js"></script>
+    <script src="../User/Function/RetrievePostComment.js"></script>
+    <script src="../User/Function/RetrievePost.js"></script>
+    <script src="../User/Function/RetrieveSendChat.js"></script> 
+    <script src="../User/Function/LikePost.js"></script>    
+
 
     <script>
-  window.onload = function () {
-    const body = document.getElementById("body");
-    setTimeout(function () {
-      const container = document.getElementById("PublicChatBody");
-      const scrollHeight = container.scrollHeight;
-      container.scrollTop = scrollHeight;
 
-    }, 1320);
-    setTimeout(() => {
-        body.style.opacity = 100;
-    }, 1350)
-  };
+        $('#profile').on('click', ()=>{
+            window.location.href = '../User/UserProfile.php';
+        })
+
+        $(document).ready(()=>{
+            let body = $('#body')
+            setTimeout(()=>{
+                let container = $('#PublicChatBody')[0]
+                let scrollHeight = container.scrollHeight;
+                container.scrollTop = scrollHeight;
+                body.css('opacity', 1)
+            }, 1000);
+        })
+
 </script>
 </body>
 </html>

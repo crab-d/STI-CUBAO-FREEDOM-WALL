@@ -62,10 +62,10 @@ do {
                 $content .= '
                     <div id="CardMessage" data-chat-id="' . $chatId . '" class="d-flex w-100 mt-3 chat-message">
                         <div class="primary-color rounded-circle align-self-end me-1 flex-shrink-0" style="height: 15px; width: 15px;"></div>
-                        <div class="d-flex flex-column">
+                        <div class="d-flex flex-column gap-1" >
                             <p class="fs-6 m-0"><small>' . $displayName . '</small></p>
-                            <p  class="primary-color m-0 fs-6 p-1 text-white rounded" style="max-width: 75%;">
-                                <small>' . $chatContent . '</small>
+                            <p class="p-0 m-0" >
+                                <small class="primary-color m-0 w-auto fs-6 p-1 flex-shrink-0 text-white rounded" style="max-width: 75%;">' . $chatContent . '</small>
                             </p>
                         </div>
                         

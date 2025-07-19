@@ -24,7 +24,7 @@ if ($filter === '') {
 
 mysqli_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
-file_put_contents("debug.log", "Page: $page, Offset: $offset, Filter: $filter\n", FILE_APPEND);
+// file_put_contents("debug.log", "Page: $page, Offset: $offset, Filter: $filter\n", FILE_APPEND);
 while ($row = mysqli_fetch_assoc($result)) {
     $rowCount++;
     switch ($row['post_chanel']) {

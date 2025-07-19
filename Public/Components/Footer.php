@@ -17,15 +17,15 @@
                     <i class="bi bi-facebook me-2" style="color: #1f2e6c !important"></i>
                     <p class="m-0" style="color: #1f2e6c !important">STI College Cubao Official Page</p>
                 </a>
-                <a class="d-flex align-items-center text-decoration-none" href="https://www.facebook.com/profile.php?id=61564161553232" target="_blank">
+                <a class="d-flex align-items-center text-decoration-none" href="https://www.facebook.com/profile.php?id=61556228069871" target="_blank">
                     <i class="bi bi-facebook me-2" style="color: #1f2e6c !important"></i>
-                    <p class="m-0" style="color: #1f2e6c !important">ITM 402</p>
+                    <p class="m-0" style="color: #1f2e6c !important">STI Cubao Freedom Wall</p>
                 </a>
             </div>
 
             <!-- Third Col -->
             <div class="col-12 col-md text-start small my-4" style="color: #1f2e6c !important">
-                <p class="fw-bolder fs-5">Contact Us</p>
+                <p class="fw-bolder fs-5">Contact STI cubao</p>
                 <a class="d-flex align-items-center text-decoration-none" href="https://www.messenger.com/t/136251219898" target="_blank">
                     <i class="bi bi-messenger me-2 " style="color: #1f2e6c !important"></i>
                     <p class="m-0" style="color: #1f2e6c !important">Messenger</p>

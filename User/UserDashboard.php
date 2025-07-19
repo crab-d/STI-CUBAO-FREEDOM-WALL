@@ -34,11 +34,16 @@ if (!isset($_SESSION['is_active'])) {
                     </div>
                 </div>
                 <div class="p-2 d-flex flex-column vh-100">
-                <p class="primary-text poppins-medium">STI CUBAO FREEDOM WALL</p>
+                <div class="d-flex align-content-center align-items-center p-0 mb-3">
+                    <p class="m-0 primary-text poppins-medium fw-bold">STI CUBAO FREEDOM WALL </p>
+                    <small class="fw-bold opacity-50 ms-2 m-0 fst-italic text-dark" style="font-size: 7px;">Alpha v.1 Test Version</small>
+                </div>
+
                 <div id="profile" style="cursor: pointer;" class="bg-light shadow-sm rounded overflow-hidden d-flex align-items-center">
                     <div class="primary-color p-2"><i class="bi m-0 bi-person-square text-white"></i></div>
                     <p  class="m-0 ms-2"><?php echo $Fullname ?></p>
-                </div>
+                </div> 
+                <div class=" overflow-scroll">
                 <div class=" mt-5 bg-light overflow-hidden shadow-sm rounded d-flex flex-column align-items-center">
                     <p class="primary-color w-100 text-center text-white">Chanels</p>
                     <div class="p-2 w-100">
@@ -51,9 +56,21 @@ if (!isset($_SESSION['is_active'])) {
                         <button type="submit" name="postFilter" value="lost_and_found" class="p-2 bg-white w-100 rounded border text-start"><span class=" bg-dark p-1 me-2"></span>Lost and Found</button>
                     </div>
                 </div>
-                <span class="  flex-grow-1"></span>
+                <div class="flex-grow-1 my-3">
+                    <button class="primary-color text-white btn w-100 p-0">Notification [reference]</button>
+                    <div >
+                        <p class="w-100 p-2 m-0 border rounded bg-light poppins-medium" ><i class="bi bi-heart-fill text-danger me-2"></i> Someone liked your post</p>
+                        <p class="w-100 p-2 m-0 border rounded bg-light poppins-medium"><i class="bi bi-person primary-text me-2"></i>Someone viewed your profile</p>
+                        <p class="w-100 p-2 m-0 border rounded bg-light poppins-medium"><i class="bi bi-chat-right-dots-fill text-primary me-2"></i>Someone commented on your post</p>
+                        <p class="w-100 p-2 m-0 border rounded bg-light poppins-medium"><i class="bi bi-chat-right-dots-fill text-primary me-2"></i>Someone replied to your comment</p>
+                        <p class="w-100 p-2 m-0 border rounded bg-light poppins-medium"><i class="bi bi-exclamation-diamond-fill text-warning me-2"></i>Your account has been muted for saying inappropriate words</p>
+
+                    </div>
+                </div>
+                </div>
+                <span class="flex-grow-1"></span>
                 <div>
-                    <a class="text-decoration-none w-100 yellow-color btn shadow-sm border-1 border-black" href="../Session/Logout.php">Logout</a>
+                    <a class="mb-5 text-decoration-none w-100 yellow-color btn shadow-sm border-1 border-black" href="../Session/Logout.php">Logout</a>
                 </div>
             </div>
             </div>
@@ -146,13 +163,14 @@ if (!isset($_SESSION['is_active'])) {
                     <p class="fs-6 text-center text-dark-emphasis"><small>Start of conversation</small></p>
 
                     <div id="chatContents">
+                <p class="alert alert-danger sticky-top m-0">delay chat update to avoid server crashing down.</p>
 
                     </div>
                     
                 </div>
 
-                <div id="PublicChatAction" class=" d-flex w-100 mb-1 p-2">   
-                    <input id="IPT_chatContent" name="chat_content" type="text" class="bg-white rounded border-0 shadow-sm flex-grow-1 border-1 ps-2" placeholder="Type a Message">
+                <div id="PublicChatAction" class=" d-flex bg-light w-100 mb-5 p-2">   
+                    <input id="IPT_chatContent" name="chat_content" type="text" class="bg-white rounded border-0 shadow-sm w-100 border-1 ps-2" placeholder="Type a Message">
                     <button id="BTN_chatSend" name="send_message" type="submit" class="primary-color btn text-white shadow-sm">Send</button>  
                 </div>
             </div>
@@ -176,12 +194,16 @@ if (!isset($_SESSION['is_active'])) {
         $(document).ready(()=>{
             let body = $('#body')
             setTimeout(()=>{
-                let container = $('#PublicChatBody')[0]
-                let scrollHeight = container.scrollHeight;
-                container.scrollTop = scrollHeight;
+                scrollToBottom();
                 body.css('opacity', 1)
             }, 1000);
         })
+
+        function scrollToBottom() {
+            let container = $('#PublicChatBody')[0]
+                let scrollHeight = container.scrollHeight;
+                container.scrollTop = scrollHeight;
+        }
 
         const public_chat = $('.public_chat');
         const tab_menu = $('.tab_menu');
@@ -196,6 +218,7 @@ if (!isset($_SESSION['is_active'])) {
 
             $('.col2').addClass('d-none')
             $('.col2').removeClass('d-block')
+            setTimeout(scrollToBottom(), 500);
         })
 
         tab_menu.on('click', (e)=>{

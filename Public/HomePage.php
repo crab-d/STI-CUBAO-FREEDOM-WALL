@@ -1,4 +1,4 @@
-<?php include 'Components/PublicMetaData.php'?>
+<?php include '../Public/Components/PublicMetaData.php'?>
  
 
 <body class="bg-light poppins-regular">
@@ -24,7 +24,7 @@
     <div class="bg-light container-fluid z-1">
         <div class="row ">
              <div class="col-12 col-sm-6 primary-color  d-flex justify-content-center align-items-center p-5">
-                <img src="/STI_FW/Resources/Image/Logo.jpg" alt="STI CUBAO FREEDOM WALL LOGO" class="rounded-circle about-logo">
+                <img src="../Resources/Image/Logo.jpg" alt="STI CUBAO FREEDOM WALL LOGO" class="rounded-circle about-logo">
             </div>
             <div class="col-12 d-flex justify-content-center align-items-center col-sm-6 border border-2 bg-light ">
                 <p class="poppins-medium m-5"> <b>STI Cubao Freedom Wall</b> <span class="primary-text"><b> connects students </b></span> from various year levels, courses, and strands. It also provides an open space to <span class="primary-text"><b> share thoughts, voice opinions, ask questions and interact freely </b></span>, promoting a supportive and connected school community.</p>
@@ -162,7 +162,7 @@
     </div>
     <div class="container-lg col d-flex justify-content-center">
         <div class=" col-md-6 cold-sm-12 rounded-sm shadow-sm d-flex flex-column roadMap-block justify-content-center">
-                <img src="" class="p-5 homepage-bg-about h-100 w-100">
+                <div class="p-5 homepage-bg-about h-100 w-100"></div>
             <p class="text-center bg-info text-white p-1 poppins-medium"> STI Cubao Freedom Wall Website</p>
             <p class="p-2"> Enhanced and systemized version of STI Cubao Freedom Wall.</p>
         </div>
@@ -172,13 +172,13 @@
     </div>
     <div class="container-lg col d-flex justify-content-center mb-5">
         <div class=" col-md-6 cold-sm-12 rounded-sm shadow-sm d-flex flex-column roadMap-block justify-content-center">
-                <img src="" class="p-5 homepage-bg-about">
+                <div class="p-5 homepage-bg-about"></div>
             <p class="text-center bg-info text-white p-1 poppins-medium"> STI Freedom Wall Website (all branch)</p>
             <p class="p-2"> Wider reach and access for all active STI Accounts</p>
         </div>
     </div>
 </section>
-<?php include 'components/Footer.php' ?>
+<?php include '../Public/Components/Footer.php' ?>
 
 
 </body>

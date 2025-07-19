@@ -7,4 +7,9 @@ const tribute = new Tribute({
     }
 });
 
-tribute.attach(document.getElementById("comment-box"));
+// Reattach every time a modal is shown
+$(document).on('shown.bs.modal', '.modal', function () {
+    tribute.attach(this.querySelectorAll('.comment-input-box'));
+});
+tribute.attach(document.querySelectorAll(".comment-input-box"));
+

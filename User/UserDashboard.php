@@ -20,7 +20,6 @@ if (!isset($_SESSION['is_active'])) {
         
         <!-- FIRST COL -->
         <div id="col1" class="col-sm-12 d-none col-lg-3 d-lg-block bg-white m-0 p-0 vh-100 ">
-             
             <div class=" d-flex flex-column vh-100">
                  <div style="backdrop-filter: blur(100px); background: rgba(255, 255, 255, 0.7);" class="d-block d-lg-none p-2 border-bottom border-dark-subtle w-100 sticky-top  d-flex justify-content-between align-items-center m-0">
                     <div>
@@ -76,23 +75,20 @@ if (!isset($_SESSION['is_active'])) {
             </div>
         </div>
 
-        <!-- SECOND COL -->
-        <div id="MainBody" class="col2 col-12 col-lg-6 d-block d-flex p-0 flex-column align-items-center bg-light vh-100 overflow-scroll m-0">
-            <div style="backdrop-filter: blur(100px); background: rgba(255, 255, 255, 0.7);" class="d-block d-lg-none p-2 border-bottom border-dark-subtle w-100 sticky-top  d-flex justify-content-between align-items-center m-0">
-        <div>
-            <p class="poopins-medium text-dark fw-bold m-0">SCFW</p>
-        </div>
-        <div class="d-flex justify-content-end gap-4">
-            <div ><i class="tab_content bi bi-file-post-fill"></i></div>
-            <div ><i class="public_chat bi bi-chat-square-dots-fill"></i></div>
-            <div class="tab_menu primary-color rounded"><i class="bi text-white bi-list"></i></div>
+            <!-- SECOND COL -->
+            <div id="MainBody" class="col2 col-12 col-lg-6 d-block d-flex p-0 flex-column align-items-center bg-light vh-100 overflow-scroll m-0">
+                <div style="backdrop-filter: blur(100px); background: rgba(255, 255, 255, 0.7);" class="d-block d-lg-none p-2 border-bottom border-dark-subtle w-100 sticky-top  d-flex justify-content-between align-items-center m-0">
+            <div>
+                <p class="poopins-medium text-dark fw-bold m-0">SCFW</p>
+            </div>
+            <div class="d-flex justify-content-end gap-4">
+                <div ><i class="tab_content bi bi-file-post-fill"></i></div>
+                <div ><i class="public_chat bi bi-chat-square-dots-fill"></i></div>
+                <div class="tab_menu primary-color rounded"><i class="bi text-white bi-list"></i></div>
 
-        </div>
+            </div>
     </div>  
-
-
             <div class="bg-light rounded-2 shadow-sm border col-12 col-sm-9 p-0 mt-2 d-flex border border-info">
-                
                 <button type="button" class="btn w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Create post in a wall
                 </button>
@@ -125,22 +121,13 @@ if (!isset($_SESSION['is_active'])) {
                         </div>
                     </div>
                 </form>
-
-
             </div>
-
-            <div id="response" class="w-100  m-0 p-0 d-flex justify-content-center flex-column text-center align-items-center">
-                
-            </div>
+            <div id="response" class="w-100  m-0 p-0 d-flex justify-content-center flex-column text-center align-items-center"></div>
             <div id="loading" style="display: none; text-align: center;" class="d-flex justify-content-center ">
                 <p>Loading more post</p>
             </div>
-
-
-
         </div>
 
-        
         <!-- THIRD COL -->
         <div id="col3" class="col-12 d-none col-lg-3 d-lg-block overflow-scroll bg-white m-0 p-0">
            <!-- <textarea id="comment-box" placeholder="Type @..."></textarea> -->
@@ -171,7 +158,7 @@ if (!isset($_SESSION['is_active'])) {
                 </div>
 
                 <div id="PublicChatAction" class=" d-flex bg-light w-100 mb-5 p-2">   
-                    <input id="IPT_chatContent" name="chat_content" type="text" class="bg-white rounded border-0 shadow-sm w-100 border-1 ps-2" placeholder="Type a Message">
+                    <input id="IPT_chatContent" name="chat_content" type="text" class="comment-input-box bg-white rounded border-0 shadow-sm w-100 border-1 ps-2" placeholder="Type a Message">
                     <button id="BTN_chatSend" name="send_message" type="submit" class="primary-color btn text-white shadow-sm">Send</button>  
                 </div>
             </div>
@@ -187,7 +174,7 @@ if (!isset($_SESSION['is_active'])) {
     <script src="../User/Function/MentionUserFunction.js"></script>
     <script src="../User/Function/ScrollBottomChat.js"></script>
     <script src="../User/Function/HeaderTabFunction.js"></script>
-
+        <script src="../User/Function/ReplyComment.js"></script>
     <script>
         $('#profile').on('click', ()=>{
             window.location.href = '../User/UserProfile.php';

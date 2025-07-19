@@ -23,15 +23,35 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <p class="fs-6 m-0 text-start opacity-50"><small>'. getUserDisplayName($row['account_id']) .'</small></p>
                     <p class="primary-color text-start m-0 rounded p-1 text-white" >'. $row['comment_content'] .'</p>
                 </div>
-                <p class="primary-text fs-6 m-0 ms-2"><small>Reply</small></p>
+                <p data-comment-id="'. $row['comment_id'].'" data-post-id="'. $row['post_id'].'" data-display-name="'.getUserDisplayName($row['account_id']).'" class="reply-comment primary-text fs-6 m-0 ms-2" style="cursor: pointer"><small>Reply <span class="primary-color rounded text-white p-1" style="height: 10px; width: 10px; font-size: 10px">'. getPostReplyCount($row['post_id'], $row['comment_id']). '</span></small></p>
             </div>
-            <div class="w-100 d-flex justify-content-start ps-5">
-                '. getPostCommentReply($row['post_id'], $row['comment_id']) .'
-            </div>
-        </div>
-        ';
+            <div id="reply-container-'.$row['comment_id'].'" class="w-100 d-none bg-light d-flex flex-column align-items-start justify-content-start ps-3">
+                    '. getPostCommentReply($row['post_id'], $row['comment_id']) .'
+                    <div class="w-100 p-0">
+                    <form id="reply-form-'. $row['comment_id'].'" class="d-flex w-100 justify-content-between p-2" >
+                    <input type="hidden" name="post_id" value="'. $row["post_id"] .'">
+                        <input id="reply_input"  class="reply_input w-100 m-0 comment-input-box rounded border-0 bg-white shadow-sm" placeholder="Comment as ' . getUserDisplayName($account_id) . '">
+                        <button id="reply_submit" class="btn primary-color text-white rounded shadow-sm m-1"  type="submit">Send</button>
+                    </form>
+                    </div>
+                </div>';
+         
+
+        $user_comment .= '</div>';
     }
     
+}
+
+
+function getPostReplyCount($post_id ,$comment_id) {
+    require '../../Database/db_connect.php';
+    $query = 'SELECT COUNT(*) AS total_reply FROM reply_comment_post WHERE post_id = ? AND comment_id = ?';
+    $stmt = mysqli_prepare($conn_contents, $query);
+    mysqli_stmt_bind_param($stmt, 'ii', $post_id, $comment_id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $total_reply);
+    mysqli_stmt_fetch($stmt);
+    return $total_reply;
 }
 
 function getPostCommentReply($post_id, $comment_id) {

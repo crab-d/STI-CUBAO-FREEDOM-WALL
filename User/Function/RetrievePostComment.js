@@ -21,16 +21,16 @@ $(document).ready(() => {
             }
         })
     }
-
-
     
     $('#response').on('submit', '#comment_form', function(event) {
         event.preventDefault()
-        $comment_content = $(this).find('#comment_input').val();
+        $comment_content = $(this).find('#comment_input');
+        $comment_val = $comment_content.val();
         $post_id = $(this).find('input[name="post_id"]').val();
-        sendComment($comment_content, $post_id)
-        $comment_content = text ('');
+        sendComment($comment_val, $post_id)
+        $comment_content.val('');
     })
+
 
     function sendComment($comment_content, $post_id) {
         $.ajax({
@@ -52,7 +52,4 @@ $(document).ready(() => {
         })
     }
 
-    function updateCommentCount($newCount) {
-        
-    }
 })

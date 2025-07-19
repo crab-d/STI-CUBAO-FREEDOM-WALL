@@ -25,10 +25,14 @@ July 18 2025
 - Create table 
 - RetrieveMessageAjax function
 
+July 19 2025
+- Published Alpha Version for testing
+- Comment Replying
+July 20 2025
+
 ==================
 
 WAITLIST:
-Post commenting function
 chat liking function
 chat reply function
 user profile 

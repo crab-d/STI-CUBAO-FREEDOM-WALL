@@ -85,7 +85,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         }
 
         $htmlContent .= '<p id="comment_post" style="cursor: pointer" class="m-0 comment_post" data-bs-toggle="modal" data-bs-target="#commentSectionModal-id-'.$row['post_id'].'"> 
-            Comment <span class="rounded text-white poppins-medium primary-color p-1" style="height:10px; width:10px;">' . getPostCommentCount($row['post_id']) . '</p>
+            Comment <span class="rounded text-white poppins-medium primary-color p-1" style="height:10px; width:10px;">' . (getPostCommentCount($row['post_id']) + getPostReplyCount($row['post_id'])) . '</p>
 
                 <div id="commentSectionModal-id-'. $row['post_id'] .'" aria-hidden="false" class="modal fade" tabindex="-1"  >
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-lg-down">
@@ -138,9 +138,15 @@ function getPostCommentCount($post_id) {
     return $comment_post;
 }
 
-function getPostComment($post_id) {
-    $query = 'SELECT COUNT(*) AS total_comment FROM comment_post WHERE post_id = ?';
-
+function getPostReplyCount($post_id) {
+    require '../../Database/db_connect.php';
+    $query = 'SELECT COUNT(*) AS total_reply FROM reply_comment_post WHERE post_id = ?';
+    $stmt = mysqli_prepare($conn_contents, $query);
+    mysqli_stmt_bind_param($stmt, 'i', $post_id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $total_reply);
+    mysqli_stmt_fetch($stmt);
+    return $total_reply;
 }
 
 function getUserDisplayName($account_id){

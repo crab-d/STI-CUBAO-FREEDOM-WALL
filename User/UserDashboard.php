@@ -92,6 +92,7 @@ if (!isset($_SESSION['is_active'])) {
 
 
             <div class="bg-light rounded-2 shadow-sm border col-12 col-sm-9 p-0 mt-2 d-flex border border-info">
+                
                 <button type="button" class="btn w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Create post in a wall
                 </button>
@@ -139,9 +140,10 @@ if (!isset($_SESSION['is_active'])) {
 
         </div>
 
+        
         <!-- THIRD COL -->
         <div id="col3" class="col-12 d-none col-lg-3 d-lg-block overflow-scroll bg-white m-0 p-0">
-           
+           <!-- <textarea id="comment-box" placeholder="Type @..."></textarea> -->
             <div class="bg-white d-flex flex-column align-items-center vh-100">
 
              <div style="backdrop-filter: blur(100px); background: rgba(255, 255, 255, 0.7);" class="d-block d-lg-none p-2 border-bottom border-dark-subtle w-100 sticky-top  d-flex justify-content-between align-items-center m-0">
@@ -163,8 +165,7 @@ if (!isset($_SESSION['is_active'])) {
                     <p class="fs-6 text-center text-dark-emphasis"><small>Start of conversation</small></p>
 
                     <div id="chatContents">
-                <p class="alert alert-danger sticky-top m-0">delay chat update to avoid server crashing down.</p>
-
+                        <p class="alert alert-danger sticky-top m-0">delay chat update to avoid server crashing down.</p>
                     </div>
                     
                 </div>
@@ -183,77 +184,15 @@ if (!isset($_SESSION['is_active'])) {
     <script src="../User/Function/RetrievePost.js"></script>
     <script src="../User/Function/RetrieveSendChat.js"></script> 
     <script src="../User/Function/LikePost.js"></script>    
-
+    <script src="../User/Function/MentionUserFunction.js"></script>
+    <script src="../User/Function/ScrollBottomChat.js"></script>
+    <script src="../User/Function/HeaderTabFunction.js"></script>
 
     <script>
-
         $('#profile').on('click', ()=>{
             window.location.href = '../User/UserProfile.php';
         })
+    </script>
 
-        $(document).ready(()=>{
-            let body = $('#body')
-            setTimeout(()=>{
-                scrollToBottom();
-                body.css('opacity', 1)
-            }, 1000);
-        })
-
-        function scrollToBottom() {
-            let container = $('#PublicChatBody')[0]
-                let scrollHeight = container.scrollHeight;
-                container.scrollTop = scrollHeight;
-        }
-
-        const public_chat = $('.public_chat');
-        const tab_menu = $('.tab_menu');
-        const tab_content = $('.tab_content');
-
-        public_chat.on('click', (e)=>{
-            $('#col3').addClass('d-block')
-            $('#col3').removeClass('d-none')
-
-            $('#col1').addClass('d-none')
-            $('#col1').removeClass('d-block')
-
-            $('.col2').addClass('d-none')
-            $('.col2').removeClass('d-block')
-            setTimeout(scrollToBottom(), 500);
-        })
-
-        tab_menu.on('click', (e)=>{
-            $('#col1').addClass('d-block')
-            $('#col1').removeClass('d-none')
-
-            $('#col3').addClass('d-none')
-            $('#col3').removeClass('d-block')
-
-            $('.col2').addClass('d-none')
-            $('.col2').removeClass('d-block')
-        })
-
-        tab_content.on('click', (e)=>{
-            $('.col2').addClass('d-block')
-            $('.col2').removeClass('d-none')
-
-            $('#col1').addClass('d-none')
-            $('#col1').removeClass('d-block')
-
-            $('#col3').addClass('d-none')
-            $('#col3').removeClass('d-block')
-        })
-
-        $('button[name="postFilter"]').on('click', (e)=>{
-            $('.col2').addClass('d-block')
-            $('.col2').removeClass('d-none')
-
-            $('#col1').addClass('d-none')
-            $('#col1').removeClass('d-block')
-
-            $('#col3').addClass('d-none')
-            $('#col3').removeClass('d-block')
-        })
-
-</script>
 </body>
 </html>

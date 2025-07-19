@@ -1,0 +1,22 @@
+Alpha V.1 - July 19 2025
+- Initial Deplyoment
+
+Alpha V.1.1 - July 20 2025
+- Minor UI change
+
+Alpha V.2
+- Layout post comment reply
+- Send reply comment
+
+Alpha V.3
+- User Mention system
+- notification system 
+
+Alpha V.4
+- User profile
+
+Alpha V.5
+- Search user
+
+---------------
+Beta V.1

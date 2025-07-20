@@ -35,8 +35,8 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <div class="w-100 p-0">
                     <form id="reply-form-'. $row['comment_id'].'" class="d-flex w-100 justify-content-between p-2" >
                     <input type="hidden" name="post_id" value="'. $row["post_id"] .'">
-                        <input style="font-size: 14px" id="reply_input"  class="border   reply_input p-1 w-100 m-0 comment-input-box rounded border-0 bg-white shadow-sm" placeholder="Comment as ' . getUserDisplayName($account_id) . '" autocomplete="off">
-                        <button style="font-size: 14px" id="reply_submit" class="btn primary-color text-white rounded shadow-sm m-1"  type="submit">Send</button>
+                        <input  id="reply_input"  class="border primary-fs  reply_input p-1 w-100 m-0 comment-input-box rounded border-0 bg-white shadow-sm" placeholder="Comment as ' . getUserDisplayName($account_id) . '" autocomplete="off">
+                        <button   id="reply_submit" class="btn primary-color primary-fs text-white rounded shadow-sm m-1"  type="submit">Send</button>
                     </form>
                     </div>
                 </div>';

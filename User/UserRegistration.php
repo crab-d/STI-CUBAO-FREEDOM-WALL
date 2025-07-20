@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["displayName"])) {
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     if ($row = mysqli_fetch_assoc($result)) {
-     echo '<div class="alert alert-danger">Display name already exists please try different one</div>';
+     echo '<div class="alert alert-danger">Display name already taken, please try different one</div>';
      
     } else {
 
@@ -105,7 +105,7 @@ mysqli_close($conn_accounts);
             <label for="email" class="mt-3">School Email</label>
             <input name="email" class="p-1 rounded opacity-25" value="<?php echo htmlspecialchars($_SESSION['email']);?>" readonly>
             <label for="displayName" class="mt-3">Display Name</label>
-            <input name="displayName" class="p-1 rounded shadow-sm border-0" value="Anonymous STIers" >
+            <input name="displayName" class="p-1 rounded shadow-sm border-0" maxlength="20" value="Anonymous STIers" >
              <button type="button" class="btn btn-info text-white mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Register
             </button>

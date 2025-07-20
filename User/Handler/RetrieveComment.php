@@ -7,13 +7,13 @@ $account_id = $_SESSION['account_id'];
 $is_active = 1;
 $user_comment = '';
 
-$query = 'SELECT * FROM comment_post WHERE post_id = ? AND is_active = ?';
+$query = 'SELECT * FROM comment_post WHERE post_id = ? AND is_active = ? ORDER BY comment_id DESC' ;
 $stmt = mysqli_prepare($conn_contents, $query);
 mysqli_stmt_bind_param($stmt, 'ii', $post_id, $is_active);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
-while ($row = mysqli_fetch_assoc($result)) {
 
+while ($row = mysqli_fetch_assoc($result)) {
     if ((bool) $row['is_active']) {
         $user_comment .= '
         <div class="d-flex flex-column align-items-end mb-3 ">
@@ -35,13 +35,10 @@ while ($row = mysqli_fetch_assoc($result)) {
                     </form>
                     </div>
                 </div>';
-         
-
         $user_comment .= '</div>';
     }
     
 }
-
 
 function getPostReplyCount($post_id ,$comment_id) {
     require '../../Database/db_connect.php';
@@ -96,7 +93,6 @@ function getUserDisplayName($account_id){
 
     return $posterDisplayName;
 }
-
 
 header('Content-Type: application/json');
 echo json_encode([

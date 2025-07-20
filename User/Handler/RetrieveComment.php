@@ -30,7 +30,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <p data-comment-id="'. $row['comment_id'].'" data-post-id="'. $row['post_id'].'" data-display-name="'.getUserDisplayName($row['account_id']).'" class="reply-comment primary-text p-0 m-0 ms-2" style="cursor: pointer; font-size: 9px">Reply <span class="  p-1" style="height: 10px; width: 10px; font-size: 9px">'. getPostReplyCount($row['post_id'], $row['comment_id']). '</span></p> 
                 </div>
             </div>
-                    <div id="reply-container-'.$row['comment_id'].'" class="w-100 d-none bg-light d-flex flex-column align-items-start justify-content-start ps-3">
+                    <div id="reply-container-'.$row['comment_id'].'" class="w-100 d-none bg-light d-flex flex-column align-items-start justify-content-start ps-3 p-2">
                     '. getPostCommentReply($row['post_id'], $row['comment_id']) .'
                     <div class="w-100 p-0">
                     <form id="reply-form-'. $row['comment_id'].'" class="d-flex w-100 justify-content-between p-2" >
@@ -71,11 +71,8 @@ function getPostCommentReply($post_id, $comment_id) {
         $rowCount++;
         $reply .= '
         <div class="d-flex flex-column w-100 mb-3 ">
-
             <div class="d-flex flex-column align-items-start w-100">
-
                 <div class="user-comment w-100 d-flex align-items-end justify-content-start " >
-
                     <div style="height: 15px; width: 15px;" class="rounded-circle me-2 primary-color flex-shrink-0"></div>
                     <div class="d-flex flex-column align-items-start justify-content-end" style="max-width: 90%;" >
                         <p class=" m-0 text-start " style="font-size: 10px"> '. getUserDisplayName($row['account_id']) .' </p>

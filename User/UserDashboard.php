@@ -42,10 +42,10 @@ if (!isset($_SESSION['is_active'])) {
                     <div class="primary-color p-2"><i class="bi m-0 bi-person-square text-white"></i></div>
                     <p  class="m-0 ms-2"><?php echo $Fullname ?></p>
                 </div> 
-                <div class=" overflow-scroll">
-                <div class=" mt-5 bg-light overflow-hidden shadow-sm rounded d-flex flex-column align-items-center">
+                <div class=" overflow-scroll my-4">
+                <div class=" bg-light overflow-hidden shadow-sm rounded d-flex flex-column align-items-center">
                     <p class="primary-color w-100 text-center text-white">Chanels</p>
-                    <div class="p-2 w-100">
+                    <div class="p-2 w-100 primary-fs">
                         <button type="submit" name="postFilter" value="" class="p-2 text-start mb-4 bg-white w-100 rounded border">All Chanels</button>
                         <button type="submit" name="postFilter" value="random_message" class="p-2 bg-white w-100 rounded border text-start"><span class="primary-color p-1 me-2"></span>Random Message</button>
                         <button type="submit" name="postFilter" value="rants" class="p-2 bg-white w-100 rounded border text-start"><span class="bg-warning p-1 me-2"></span>Rants</button>
@@ -55,7 +55,7 @@ if (!isset($_SESSION['is_active'])) {
                         <button type="submit" name="postFilter" value="lost_and_found" class="p-2 bg-white w-100 rounded border text-start"><span class=" bg-dark p-1 me-2"></span>Lost and Found</button>
                     </div>
                 </div>
-                <div class="flex-grow-1 my-3">
+                <div class="flex-grow-1 my-3 primary-fs">
                     <button class="primary-color text-white btn w-100 p-0">Notification [reference]</button>
                     <div >
                         <p class="w-100 p-2 m-0 border rounded bg-light poppins-medium" ><i class="bi bi-heart-fill text-danger me-2"></i> Someone liked your post</p>
@@ -88,7 +88,7 @@ if (!isset($_SESSION['is_active'])) {
 
             </div>
     </div>  
-            <div class="bg-light rounded-2 shadow-sm border col-12 col-sm-9 p-0 mt-2 d-flex border border-info">
+            <div class="bg-light rounded-2 shadow-sm border primary-fs col-12 col-sm-9 p-0 mt-2 d-flex border border-info">
                 <button type="button" class="btn w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Create post in a wall
                 </button>

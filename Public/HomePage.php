@@ -15,7 +15,7 @@
     <button class="btn btn-outline-primary mt-5 z-1"><a class="text-decoration-none" href="#about" > Explore</a></button>
 </section>
 
-<?php include "components/Header.php"?>
+<?php include "../Public/Components/Header.php"?>
 <section class="vw-100" id="about" >
    
     <div class="vw-100  homepage-bg-about p-5 d-flex justify-content-center align-items-center z-1">
@@ -61,7 +61,7 @@
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
       <div class="accordion-body bg-light">
-        <p class="poppins-regular"> Send anonymous message, ask something, look out for friends, confession, rants and lost and found</p>
+        <p class="poppins-regular" style="font-size: 15px"> Send anonymous message, ask something, look out for friends, confession, rants, and lost and found</p>
 
       </div>
     </div>
@@ -74,7 +74,7 @@
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <p>This site is only exclusive for <strong>STI cubao </strong>. </p>
+        <p style="font-size: 15px">This site is exclusive for <strong>STI cubao </strong>. </p>
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <p>No, everything done on this site is completely anonymous.</p>
+        <p style="font-size: 15px">No, everything done on this site is completely anonymous.</p>
       </div>
     </div>
   </div>
@@ -98,7 +98,7 @@
     </h2>
     <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <p>STIFW Aims to connect students between different years, course or strands. It also serve as an open space exclusive for STI Cubao students. </p>
+        <p style="font-size: 15px">STIFW Aims to connect students between different years, course or strands. It also serve as an open space exclusive for STI Cubao students. </p>
       </div>
     </div>
   </div>
@@ -110,7 +110,7 @@
     </h2>
     <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <p>We implement school microsoft email account to authenticate student and ensure that all users are member of STI cubao</p>
+        <p style="font-size: 15px">We implement school microsoft email account authentication to verify student status and ensure that all users are member of STI cubao</p>
       </div>
     </div>
   </div>
@@ -122,7 +122,7 @@
     </h2>
     <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <p> Only the developer have the ability to view student basic information such as name and email to monitor and evoke right action to student who violate social etiquette, just be respectful and use this site according to its purpose. Rest assured we keep your information secured and respect your privacy</p>
+        <p style="font-size: 15px"> Only the developer have the ability to view student basic information such as name and email to monitor and evoke right action to student who violate social etiquette, just be respectful and use this site according to its purpose. Rest assured we keep your information secured and respect your privacy</p>
       </div>
     </div>
   </div>
@@ -137,7 +137,7 @@
         <div id="nav_scf"  style="cursor: pointer;" class=" col-md-6 cold-sm-12 rounded-sm shadow-sm d-flex flex-column roadMap-block justify-content-center">
                 <img src="" class="p-5 homepage-bg-about">
             <p class="text-center bg-info text-white p-1 poppins-medium"> STI Cubao Freedom Wall (FB Page)</p>
-            <p class=" p-2" style="text-align: justify;"> Created on February 2024, a facebook page dedicated for posting random anonymous message, memes, and etc.</p>
+            <p class=" p-2" style="text-align: justify;"> Created in February 2024, a facebook page dedicated for posting random anonymous message, memes, and others.</p>
         </div>
     </div>
      <div class="container-lg col d-flex justify-content-center ">
@@ -147,7 +147,7 @@
         <div id="nav_sw"  style="cursor: pointer;" class=" col-md-6 cold-sm-12 rounded-sm shadow-sm d-flex flex-column roadMap-block justify-content-center">
                 <img src="../Resources/Image/STIwears.jpg" class="h-100 w-100" >
             <p class="text-center bg-info text-white p-1 poppins-medium"> STI Wears</p>
-            <p class="p-2">Research product of ITM402 Group 1 originally proposed by Jib. STI Wears is an online proware ordering system for student of STI Cubao.</p>
+            <p class="p-2">STI Wears is an online ordering platform that digitalizes the manual ordering process to provide convenience for both students and staff.</p>
         </div>
     </div>
  <div class="container-lg col d-flex justify-content-center ">
@@ -177,7 +177,7 @@
         <div class=" col-md-6 cold-sm-12 rounded-sm shadow-sm d-flex flex-column roadMap-block justify-content-center">
                 <img src="../Resources/Image/STIroblox.png" class="h-100 w-100">
             <p class="text-center bg-info text-white p-1 poppins-medium"> STI Cubao Roblox</p>
-            <p class="p-2">Virtual model of STI Cubao in roblox that can be used for hangout and online campus tour.</p>
+            <p class="p-2">Virtual online experience model of STI College Cubao. This experience provides a virtaul space for STI Student to meet and hang out with other STIers across the country.  </p>
         </div>
     </div>
      <div class="container-lg col d-flex justify-content-center ">

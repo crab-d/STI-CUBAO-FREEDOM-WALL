@@ -4,6 +4,11 @@
 .yellow-color { background-color: #fffb00 !important}
 .secondary-color {background-color: #0071b4 !important;}
 
+.dark-color {background-color: #575757 !important;}
+
+.primary-fs { font-size: 12px !important;}
+.secondary-fs {font-size: 16px !important;}
+.smaller-fs {font-size: 7px !important}
 ::-webkit-scrollbar {
     display: none;
 }

@@ -11,10 +11,6 @@ $(document).ready(()=>{
         let reply_input = reply_container.find('.reply_input');
         reply_input.val('@' + display_name + ' ');
 
-        console.log(display_name);
-        console.log(reply_button_id);
-        console.log(reply_input);
-
         $('#response').off('submit', '#reply-form-'+reply_button_id).on('submit','#reply-form-'+reply_button_id , function(e){
             e.preventDefault();
 

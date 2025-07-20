@@ -16,25 +16,27 @@ $result = mysqli_stmt_get_result($stmt);
 while ($row = mysqli_fetch_assoc($result)) {
     if ((bool) $row['is_active']) {
         $user_comment .= '
-        <div class="d-flex flex-column align-items-end mb-3 ">
-            <div class="user-comment w-100 d-flex align-items-end justify-content-start " >
-                <div style="height: 15px; width: 15px;" class="rounded-circle me-2 primary-color flex-shrink-0"></div>
-                <div class="d-flex flex-column align-items-start justify-content-end ">
-                    <p class=" m-0 text-start " style="font-size: 10px"> '. getUserDisplayName($row['account_id']) .' </p>
-                    <p class="primary-color text-start m-0 rounded p-1 text-white" >'. $row['comment_content'] .'</p>
+        <div class="d-flex flex-column w-100 mb-3 ">
+            <div class="d-flex flex-column align-items-start w-100">
+                <div class="user-comment w-100 d-flex align-items-end justify-content-start " >
+                    <div style="height: 15px; width: 15px;" class="rounded-circle me-2 primary-color flex-shrink-0"></div>
+                    <div class="d-flex flex-column overflow-hidden w-100 text-wrap align-items-start justify-content-end " >
+                        <p class=" m-0 text-start" style="font-size: 10px"> '. getUserDisplayName($row['account_id']) .' </p>
+                        <p class="dark-color text-start m-0 rounded p-1 text-white text-wrap" style="font-size:14px; max-width: 90%; overflow-wrap: break-word;" >'. $row['comment_content'] .'</p>
+                    </div>
                 </div>
-                <p data-comment-id="'. $row['comment_id'].'" data-post-id="'. $row['post_id'].'" data-display-name="'.getUserDisplayName($row['account_id']).'" class="reply-comment primary-text fs-6 m-0 ms-2" style="cursor: pointer"><small>Reply <span class="primary-color rounded text-white p-1" style="height: 10px; width: 10px; font-size: 10px">'. getPostReplyCount($row['post_id'], $row['comment_id']). '</span></small></p>
-                <span class="flex-grow-1"></span>
-                <p class="   ms-2" style="font-size:10px">'. $row['comment_date'] .'</p>
+                <div class="d-flex ms-4 mb-0">
+                    <p class="m-0" style="font-size: 10px; padding: 0px">'. $row['comment_date'].' - </p>
+                    <p data-comment-id="'. $row['comment_id'].'" data-post-id="'. $row['post_id'].'" data-display-name="'.getUserDisplayName($row['account_id']).'" class="reply-comment primary-text p-0 m-0 ms-2" style="cursor: pointer; font-size: 9px">Reply <span class="  p-1" style="height: 10px; width: 10px; font-size: 9px">'. getPostReplyCount($row['post_id'], $row['comment_id']). '</span></p> 
                 </div>
-
+            </div>
                     <div id="reply-container-'.$row['comment_id'].'" class="w-100 d-none bg-light d-flex flex-column align-items-start justify-content-start ps-3">
                     '. getPostCommentReply($row['post_id'], $row['comment_id']) .'
                     <div class="w-100 p-0">
                     <form id="reply-form-'. $row['comment_id'].'" class="d-flex w-100 justify-content-between p-2" >
                     <input type="hidden" name="post_id" value="'. $row["post_id"] .'">
-                        <input id="reply_input"  class="reply_input w-100 m-0 comment-input-box rounded border-0 bg-white shadow-sm" placeholder="Comment as ' . getUserDisplayName($account_id) . '" autocomplete="off">
-                        <button id="reply_submit" class="btn primary-color text-white rounded shadow-sm m-1"  type="submit">Send</button>
+                        <input style="font-size: 14px" id="reply_input"  class="border   reply_input p-1 w-100 m-0 comment-input-box rounded border-0 bg-white shadow-sm" placeholder="Comment as ' . getUserDisplayName($account_id) . '" autocomplete="off">
+                        <button style="font-size: 14px" id="reply_submit" class="btn primary-color text-white rounded shadow-sm m-1"  type="submit">Send</button>
                     </form>
                     </div>
                 </div>';
@@ -68,18 +70,24 @@ function getPostCommentReply($post_id, $comment_id) {
     while($row = mysqli_fetch_assoc($result)) {
         $rowCount++;
         $reply .= '
-            <div class="user-comment w-100 d-flex align-items-end justify-content-start " >
-                <div style="height: 15px; width: 15px;" class="rounded-circle me-2 primary-color flex-shrink-0"></div>
-                <div class="d-flex flex-column align-items-start justify-content-end ">
-                    <p class=" m-0 text-start " style="font-size: 10px"> '. getUserDisplayName($row['account_id']) .' </p>
-                    <p class="primary-color text-start m-0 rounded p-1 text-white" >'. $row['reply_content'] .'</p>
+        <div class="d-flex flex-column w-100 mb-3 ">
+
+            <div class="d-flex flex-column align-items-start w-100">
+
+                <div class="user-comment w-100 d-flex align-items-end justify-content-start " >
+
+                    <div style="height: 15px; width: 15px;" class="rounded-circle me-2 primary-color flex-shrink-0"></div>
+                    <div class="d-flex flex-column align-items-start justify-content-end" style="max-width: 90%;" >
+                        <p class=" m-0 text-start " style="font-size: 10px"> '. getUserDisplayName($row['account_id']) .' </p>
+                        <p class="dark-color text-start m-0 rounded p-1 text-white" style="font-size: 12px; max-width: 100%; overflow-wrap: break-word;" >'. $row['reply_content'] .'</p>
+                    </div>
                 </div>
-                <p class="primary-text fs-6 m-0 ms-2"><small>Reply</small></p>
-                <span class="flex-grow-1"></span>
-
-                <p style="font-size: 10px">'. $row['reply_date'] .' </p>
-
             </div>
+
+            <div class="ms-4 p-0 d-flex">
+                <p class="m-0 p-0" style="font-size: 10px; padding: 0px">'. $row['reply_date'] .'</p>
+            </div>
+        </div>
         ';
     }
     return $reply;

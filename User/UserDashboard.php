@@ -21,21 +21,22 @@ if (!isset($_SESSION['is_active'])) {
         <!-- FIRST COL -->
         <div id="col1" class="col-sm-12 d-none col-lg-3 d-lg-block bg-white m-0 p-0 vh-100 ">
             <div class=" d-flex flex-column vh-100">
-                 <div style="backdrop-filter: blur(100px); background: rgba(255, 255, 255, 0.7);" class="d-block d-lg-none p-2 border-bottom border-dark-subtle w-100 sticky-top  d-flex justify-content-between align-items-center m-0">
-                    <div>
-                        <p class="poopins-medium text-dark fw-bold m-0">SCFW</p>
-                    </div>
-                    <div class="d-flex justify-content-end gap-4">
-                        <div><i class="bi tab_content bi-file-post-fill"></i></div>
-                        <div ><i class="public_chat bi bi-chat-square-dots-fill"></i></div>
-                        <div  class="tab_menu primary-color rounded"><i class="bi text-white bi-list"></i></div>
-
-                    </div>
+                 
+                <div style="backdrop-filter: blur(100px); background: rgba(255, 255, 255, 0.7);" class="d-block d-lg-none  border-bottom border-dark-subtle w-100 sticky-top  d-flex justify-content-between align-items-center m-0">
+                <div>
+                    <p class="poopins-medium text-dark fw-bold m-0 ms-3">SCFW</p>
                 </div>
+                <div class="d-flex justify-content-end">
+                    <div class="tab_content p-1 px-2 primary-color" ><i class="tab_content bi bi-file-post-fill text-white"></i></div>
+                    <div class="public_chat p-1 px-2 primary-color" ><i class=" bi bi-chat-square-dots-fill text-white"></i></div>
+                    <div class="tab_menu primary-color px-2 p-1"><i class="bi text-white bi-list"></i></div>
+
+                </div>
+            </div>  
                 <div class="p-2 d-flex flex-column vh-100">
                 <div class="d-flex align-content-center align-items-center p-0 mb-3">
                     <p class="m-0 primary-text poppins-medium fw-bold">STI CUBAO FREEDOM WALL </p>
-                    <small class="fw-bold opacity-50 ms-2 m-0 fst-italic text-dark" style="font-size: 7px;">Alpha v.1 Test Version</small>
+                    <small class="fw-bold opacity-50 ms-2 m-0 fst-italic text-dark" style="font-size: 7px;">Alpha v.3.4</small>
                 </div>
 
                 <div id="profile" style="cursor: pointer;" class="bg-light shadow-sm rounded overflow-hidden d-flex align-items-center">
@@ -45,7 +46,7 @@ if (!isset($_SESSION['is_active'])) {
                 <div class=" overflow-scroll my-4">
                 <div class=" bg-light overflow-hidden shadow-sm rounded d-flex flex-column align-items-center">
                     <p class="primary-color w-100 text-center text-white">Chanels</p>
-                    <div class="p-2 w-100 primary-fs">
+                    <div class="p-0 w-100 primary-fs">
                         <button type="submit" name="postFilter" value="" class="p-2 text-start mb-4 bg-white w-100 rounded border">All Chanels</button>
                         <button type="submit" name="postFilter" value="random_message" class="p-2 bg-white w-100 rounded border text-start"><span class="primary-color p-1 me-2"></span>Random Message</button>
                         <button type="submit" name="postFilter" value="rants" class="p-2 bg-white w-100 rounded border text-start"><span class="bg-warning p-1 me-2"></span>Rants</button>
@@ -56,7 +57,7 @@ if (!isset($_SESSION['is_active'])) {
                     </div>
                 </div>
                 <div class="flex-grow-1 my-3 primary-fs">
-                    <button class="primary-color text-white btn w-100 p-0">Notification [reference]</button>
+                    <button class="primary-color rounded-bottom-1 text-white btn w-100 p-0">Notification [reference]</button>
                     <div >
                         <p class="w-100 p-2 m-0 border rounded bg-light poppins-medium" ><i class="bi bi-heart-fill text-danger me-2"></i> Someone liked your post</p>
                         <p class="w-100 p-2 m-0 border rounded bg-light poppins-medium"><i class="bi bi-person primary-text me-2"></i>Someone viewed your profile</p>
@@ -77,17 +78,17 @@ if (!isset($_SESSION['is_active'])) {
 
             <!-- SECOND COL -->
             <div id="MainBody" class="col2 col-12 col-lg-6 d-block d-flex p-0 flex-column align-items-center bg-light vh-100 overflow-scroll m-0">
-                <div style="backdrop-filter: blur(100px); background: rgba(255, 255, 255, 0.7);" class="d-block d-lg-none p-2 border-bottom border-dark-subtle w-100 sticky-top  d-flex justify-content-between align-items-center m-0">
-            <div>
-                <p class="poopins-medium text-dark fw-bold m-0">SCFW</p>
-            </div>
-            <div class="d-flex justify-content-end gap-4">
-                <div ><i class="tab_content bi bi-file-post-fill"></i></div>
-                <div ><i class="public_chat bi bi-chat-square-dots-fill"></i></div>
-                <div class="tab_menu primary-color rounded"><i class="bi text-white bi-list"></i></div>
+                <div style="backdrop-filter: blur(100px); background: rgba(255, 255, 255, 0.7);" class="d-block d-lg-none  border-bottom border-dark-subtle w-100 sticky-top  d-flex justify-content-between align-items-center m-0">
+                <div>
+                    <p class="poopins-medium text-dark fw-bold m-0 ms-3">SCFW</p>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <div class="tab_content p-1 px-2 primary-color" ><i class="tab_content bi bi-file-post-fill text-white"></i></div>
+                    <div class="public_chat p-1 px-2 primary-color" ><i class=" bi bi-chat-square-dots-fill text-white"></i></div>
+                    <div class="tab_menu primary-color px-2 p-1"><i class="bi text-white bi-list"></i></div>
 
-            </div>
-    </div>  
+                </div>
+            </div>  
             <div class="bg-light rounded-2 shadow-sm border primary-fs col-12 col-sm-9 p-0 mt-2 d-flex border border-info">
                 <button type="button" class="btn w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Create post in a wall
@@ -133,14 +134,14 @@ if (!isset($_SESSION['is_active'])) {
            <!-- <textarea id="comment-box" placeholder="Type @..."></textarea> -->
             <div class="bg-white d-flex flex-column align-items-center vh-100">
 
-             <div style="backdrop-filter: blur(100px); background: rgba(255, 255, 255, 0.7);" class="d-block d-lg-none p-2 border-bottom border-dark-subtle w-100 sticky-top  d-flex justify-content-between align-items-center m-0">
+             <div style="backdrop-filter: blur(100px); background: rgba(255, 255, 255, 0.7);" class="d-block d-lg-none  border-bottom border-dark-subtle w-100 sticky-top  d-flex justify-content-between align-items-center m-0">
                 <div>
-                    <p class="poopins-medium text-dark fw-bold m-0">SCFW</p>
+                    <p class="poopins-medium text-dark fw-bold m-0 ms-3">SCFW</p>
                 </div>
-                <div class="d-flex justify-content-end gap-4">
-                    <div><i class="tab_content bi bi-file-post-fill"></i></div>
-                    <div><i class="public_chat bi bi-chat-square-dots-fill"></i></div>
-                    <div class="tab_menu primary-color rounded"><i class="bi text-white bi-list"></i></div>
+                <div class="d-flex justify-content-end">
+                    <div class="tab_content p-1 px-2 primary-color" ><i class="tab_content bi bi-file-post-fill text-white"></i></div>
+                    <div class="public_chat p-1 px-2 primary-color" ><i class=" bi bi-chat-square-dots-fill text-white"></i></div>
+                    <div class="tab_menu primary-color px-2 p-1"><i class="bi text-white bi-list"></i></div>
 
                 </div>
             </div>  

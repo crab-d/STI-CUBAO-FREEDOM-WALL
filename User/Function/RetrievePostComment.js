@@ -1,14 +1,11 @@
 $(document).ready(() => {
     $('#response').on('click','.comment_post', function() {
         $post_id = $(this).closest('.user_post').data('post-id');  
-        $comment_loading = $('#commentSectionModal-id-'+ Post_id+' .modal-content .modal-body #loading-comments');
-        $comment_loading.addClass('d-block').removeClass('d-none');
         loadComments($post_id)
     })
 
     function loadComments(Post_id) {
         $comment_container = $('#commentSectionModal-id-'+ Post_id+' .modal-content .modal-body');
-        
         $.ajax({
             url: '../User/Handler/RetrieveComment.php',
             type: 'GET',
@@ -18,7 +15,6 @@ $(document).ready(() => {
             },
             success: function(response) {
                 $comment_container.html(response.User_Comment)   
-                $comment_loading.removeClass('d-block').addClass('d-none')
             }
         })
     }

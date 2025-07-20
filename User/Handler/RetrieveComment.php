@@ -24,13 +24,16 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <p class="primary-color text-start m-0 rounded p-1 text-white" >'. $row['comment_content'] .'</p>
                 </div>
                 <p data-comment-id="'. $row['comment_id'].'" data-post-id="'. $row['post_id'].'" data-display-name="'.getUserDisplayName($row['account_id']).'" class="reply-comment primary-text fs-6 m-0 ms-2" style="cursor: pointer"><small>Reply <span class="primary-color rounded text-white p-1" style="height: 10px; width: 10px; font-size: 10px">'. getPostReplyCount($row['post_id'], $row['comment_id']). '</span></small></p>
-            </div>
-            <div id="reply-container-'.$row['comment_id'].'" class="w-100 d-none bg-light d-flex flex-column align-items-start justify-content-start ps-3">
+                <span class="flex-grow-1"></span>
+                <p class="   ms-2" style="font-size:10px">'. $row['comment_date'] .'</p>
+                </div>
+
+                    <div id="reply-container-'.$row['comment_id'].'" class="w-100 d-none bg-light d-flex flex-column align-items-start justify-content-start ps-3">
                     '. getPostCommentReply($row['post_id'], $row['comment_id']) .'
                     <div class="w-100 p-0">
                     <form id="reply-form-'. $row['comment_id'].'" class="d-flex w-100 justify-content-between p-2" >
                     <input type="hidden" name="post_id" value="'. $row["post_id"] .'">
-                        <input id="reply_input"  class="reply_input w-100 m-0 comment-input-box rounded border-0 bg-white shadow-sm" placeholder="Comment as ' . getUserDisplayName($account_id) . '">
+                        <input id="reply_input"  class="reply_input w-100 m-0 comment-input-box rounded border-0 bg-white shadow-sm" placeholder="Comment as ' . getUserDisplayName($account_id) . '" autocomplete="off">
                         <button id="reply_submit" class="btn primary-color text-white rounded shadow-sm m-1"  type="submit">Send</button>
                     </form>
                     </div>
@@ -72,6 +75,10 @@ function getPostCommentReply($post_id, $comment_id) {
                     <p class="primary-color text-start m-0 rounded p-1 text-white" >'. $row['reply_content'] .'</p>
                 </div>
                 <p class="primary-text fs-6 m-0 ms-2"><small>Reply</small></p>
+                <span class="flex-grow-1"></span>
+
+                <p style="font-size: 10px">'. $row['reply_date'] .' </p>
+
             </div>
         ';
     }

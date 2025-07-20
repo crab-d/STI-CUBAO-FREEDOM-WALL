@@ -101,7 +101,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <div class="">
                         <form id="comment_form" class="d-flex justify-content-between p-2" >
                         <input type="hidden" name="post_id" value="'. $row["post_id"] .'">
-                            <input id="comment_input"  class=" comment-input-box w-100 m-0 rounded border-0 bg-light shadow-sm" placeholder="Comment as ' . getUserDisplayName($account_id) . '">
+                            <input id="comment_input"  class=" comment-input-box w-100 m-0 rounded border-0 bg-light shadow-sm" placeholder="Comment as ' . getUserDisplayName($account_id) . '" autocomplete="off">
                             <button id="comment_submit" class="btn primary-color text-white rounded shadow-sm m-1"  type="submit">Send</button>
                         </form>
                         

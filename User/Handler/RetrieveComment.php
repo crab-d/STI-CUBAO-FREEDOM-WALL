@@ -20,7 +20,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             <div class="user-comment w-100 d-flex align-items-end justify-content-start " >
                 <div style="height: 15px; width: 15px;" class="rounded-circle me-2 primary-color flex-shrink-0"></div>
                 <div class="d-flex flex-column align-items-start justify-content-end ">
-                    <p class="fs-6 m-0 text-start opacity-50"><small>'. getUserDisplayName($row['account_id']) .'</small></p>
+                    <p class=" m-0 text-start " style="font-size: 10px"> '. getUserDisplayName($row['account_id']) .' </p>
                     <p class="primary-color text-start m-0 rounded p-1 text-white" >'. $row['comment_content'] .'</p>
                 </div>
                 <p data-comment-id="'. $row['comment_id'].'" data-post-id="'. $row['post_id'].'" data-display-name="'.getUserDisplayName($row['account_id']).'" class="reply-comment primary-text fs-6 m-0 ms-2" style="cursor: pointer"><small>Reply <span class="primary-color rounded text-white p-1" style="height: 10px; width: 10px; font-size: 10px">'. getPostReplyCount($row['post_id'], $row['comment_id']). '</span></small></p>
@@ -71,7 +71,7 @@ function getPostCommentReply($post_id, $comment_id) {
             <div class="user-comment w-100 d-flex align-items-end justify-content-start " >
                 <div style="height: 15px; width: 15px;" class="rounded-circle me-2 primary-color flex-shrink-0"></div>
                 <div class="d-flex flex-column align-items-start justify-content-end ">
-                    <p class="fs-6 m-0 text-start opacity-50"><small>'. getUserDisplayName($row['account_id']) .'</small></p>
+                    <p class=" m-0 text-start " style="font-size: 10px"> '. getUserDisplayName($row['account_id']) .' </p>
                     <p class="primary-color text-start m-0 rounded p-1 text-white" >'. $row['reply_content'] .'</p>
                 </div>
                 <p class="primary-text fs-6 m-0 ms-2"><small>Reply</small></p>

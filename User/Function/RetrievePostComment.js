@@ -1,7 +1,4 @@
 $(document).ready(() => {
-    
-    
-
     $('#response').on('click','.comment_post', function() {
         $post_id = $(this).closest('.user_post').data('post-id');  
         loadComments($post_id)
@@ -31,25 +28,20 @@ $(document).ready(() => {
         $comment_content.val('');
     })
 
-
     function sendComment($comment_content, $post_id) {
         $.ajax({
             url: '../User/Handler/SendComment.php',
             type: 'POST',
-        
             data: {
                 post_id: $post_id,
                 comment_content: $comment_content
             },
             success: function(response){
                 loadComments($post_id);
-
-                console.log('success')
             },
             error: function(xhr, error) {
                 console.log('failed 1' + xhr.status + error)
             }
         })
     }
-
 })

@@ -96,6 +96,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         </div>
                         <div class="modal-body">
                             <div class="comment-section">
+                            <p id="loading-comments">Loading comments</p>
                             </div>
                         </div>
                         <div class="">

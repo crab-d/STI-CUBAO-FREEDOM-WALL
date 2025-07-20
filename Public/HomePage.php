@@ -86,7 +86,7 @@
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <p>No, our goal is promote student voice anonymously. We only implement student microsoft account to authenticate student and ensure that all users are member of STI cubao. However, due to some inappropriate contents flooding our old system. Only the developer have the ability to view student basic information such as name and email to monitor and evoke right action to student who violate social etiquette, just be respectful and use this site according to its purpose. Rest assured we keep your information secured and respect your privacy</p>
+        <p>No, everything done on this site is completely anonymous.</p>
       </div>
     </div>
   </div>
@@ -99,7 +99,30 @@
     <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
         <p>STIFW Aims to connect students between different years, course or strands. It also serve as an open space exclusive for STI Cubao students. </p>
-
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFour">
+        Why i need to use my school email to access this site?
+      </button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <p>We implement school microsoft email account to authenticate student and ensure that all users are member of STI cubao</p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseFour">
+        Who can see the details of my account personal information?
+      </button>
+    </h2>
+    <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <p> Only the developer have the ability to view student basic information such as name and email to monitor and evoke right action to student who violate social etiquette, just be respectful and use this site according to its purpose. Rest assured we keep your information secured and respect your privacy</p>
       </div>
     </div>
   </div>

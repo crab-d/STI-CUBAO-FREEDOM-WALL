@@ -95,6 +95,5 @@ $(document).ready(function () {
         }
     })
 
-    //Initial long polling message req
     loadChats();
 });

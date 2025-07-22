@@ -88,7 +88,7 @@ if (!isset($_SESSION['is_active'])) {
 
                 </div>
             </div>  
-            <div class="bg-light rounded-2 shadow-sm border primary-fs col-12 col-sm-9 p-0 mt-2 d-flex border border-info">
+            <div class="bg-white     rounded-2 shadow-sm border primary-fs col-12 col-sm-9 p-0 mt-2 d-flex border border-info">
                 <button type="button" class="btn w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Create a post on freedom wall
                 </button>
@@ -129,9 +129,9 @@ if (!isset($_SESSION['is_active'])) {
         </div>
 
         <!-- THIRD COL -->
-        <div id="col3" class="col-12 d-none col-lg-3 d-lg-block overflow-scroll bg-white m-0 p-0">
+        <div id="col3" class="col-12 d-none col-lg-3 d-lg-block overflow-scroll m-0 p-0">
            <!-- <textarea id="comment-box" placeholder="Type @..."></textarea> -->
-            <div class="bg-white d-flex flex-column align-items-center vh-100">
+            <div class="bg-white d-flex flex-column  bg-light align-items-center vh-100">
 
              <div style="backdrop-filter: blur(100px); background: rgba(255, 255, 255, 0.7);" class="d-block d-lg-none  border-bottom border-dark-subtle w-100 sticky-top  d-flex justify-content-between align-items-center m-0">
                 <div>
@@ -158,8 +158,10 @@ if (!isset($_SESSION['is_active'])) {
                 </div>
 
                 <div id="PublicChatAction" class=" d-flex bg-light w-100 mb-5 p-2">   
-                    <input id="IPT_chatContent" name="chat_content" type="text" class="comment-input-box bg-white rounded border-0 shadow-sm w-100 border-1 ps-2" placeholder="Type a Message">
-                    <button id="BTN_chatSend" name="send_message" type="submit" class="primary-color btn text-white shadow-sm">Send</button>  
+           
+                        <input id="IPT_chatContent" name="chat_content" type="text" class=" comment-input-box primary-fs bg-white rounded border-0 shadow-sm w-100 border-1 ps-2" placeholder="Type a Message">
+                        <button id="BTN_chatSend" name="send_message" type="submit" class="primary-color btn text-white shadow-sm">Send</button>  
+                 
                 </div>
             </div>
         </div>
@@ -179,6 +181,8 @@ if (!isset($_SESSION['is_active'])) {
         $('#profile').on('click', ()=>{
             window.location.href = '../User/UserProfile.php';
         })
+
+  
     </script>
 
 </body>

@@ -2,7 +2,7 @@ $(document).ready(function () {
   let Page = 1; //initial page
   let isLoading = false; //initial loading status
   let PostFilter = ""; //initial filer, all contents
-
+ 
   //function handle loadPost with 1 paramenter that identifies the chanel of post
   function loadPosts(PostFilter) {
     if (isLoading) return; // If user scroll to the bottom already and content still loading, return

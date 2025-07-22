@@ -49,8 +49,8 @@ function getMessages($conn, $defaultActiveValue, $lastChatId, $accountId) {
 
         if ($row['account_id'] == $accountId) {
         $content .= '
-            <div id="CardMessage" data-chat-id="' . $chatId . '" class="chat-message d-flex justify-content-end w-100 mt-3">
-                <p class="primary-color m-0 primary-fs p-2 text-white rounded" style="max-width: 75%; font-size: 14px" >
+            <div id="CardMessage" data-chat-id="' . $chatId . '" class="chat-message d-flex justify-content-end mt-3">
+                <p class="primary-color m-0 primary-fs p-2 text-white rounded" style="max-width: 75%; font-size: 14px; word-break: break-all; overflow-wrap; break-word">
                         ' . $chatContent . ' 
                 </p>
             </div>';
@@ -58,8 +58,8 @@ function getMessages($conn, $defaultActiveValue, $lastChatId, $accountId) {
         $content .= '
             <div id="CardMessage" data-chat-id="' . $chatId . '" class="d-flex w-100 mt-3 chat-message" style="max-width: 80%">
                 <div class="primary-color rounded-circle align-self-end me-1 flex-shrink-0" style="height: 15px; width: 15px;"></div>
-                <div class="d-flex flex-column gap-1" style="max-width:100%">
-                    <p class="fs-6 m-0"><small>' . $displayName . '</small></p>
+                <div class="d-flex flex-column gap-0" style="max-width:100%">
+                    <p class="primary-fs m-0"><small>' . $displayName . '</small></p>
                     <p class="p-0 m-0 primary-color primary-fs w-auto p-2 flex-shrink-0 text-white rounded" style=" overflow-wrap: break-word" >
                         ' . $chatContent . '
                     </p>

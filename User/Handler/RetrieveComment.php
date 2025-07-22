@@ -19,7 +19,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <div class="d-flex flex-column w-100 mb-3 ">
             <div class="d-flex flex-column align-items-start w-100">
                 <div class="user-comment w-100 d-flex align-items-end justify-content-start " >
-                    <div style="height: 15px; width: 15px;" class="rounded-circle me-2 primary-color flex-shrink-0"></div>
+                    <div style="background-color:' . $_SESSION['profile'] .';height: 15px; width: 15px;" class="rounded-circle me-2  flex-shrink-0"></div>
                     <div class="d-flex flex-column overflow-hidden w-100 text-wrap align-items-start justify-content-end " >
                         <p class=" m-0 text-start" style="font-size: 10px"> '. getUserDisplayName($row['account_id']) .' </p>
                         <p class="dark-color text-start m-0 rounded p-1 text-white text-wrap" style="font-size:14px; max-width: 90%; overflow-wrap: break-word;" >'. $row['comment_content'] .'</p>
@@ -73,7 +73,8 @@ function getPostCommentReply($post_id, $comment_id) {
         <div class="d-flex flex-column w-100 mb-3 ">
             <div class="d-flex flex-column align-items-start w-100">
                 <div class="user-comment w-100 d-flex align-items-end justify-content-start " >
-                    <div style="height: 15px; width: 15px;" class="rounded-circle me-2 primary-color flex-shrink-0"></div>
+                    <div style="background-color:' . $_SESSION['profile'] .';height: 15px; width: 15px;" class="rounded-circle me-2  flex-shrink-0"></div>
+
                     <div class="d-flex flex-column align-items-start justify-content-end" style="max-width: 90%;" >
                         <p class=" m-0 text-start " style="font-size: 10px"> '. getUserDisplayName($row['account_id']) .' </p>
                         <p class="dark-color text-start m-0 rounded p-1 text-white" style="font-size: 12px; max-width: 100%; overflow-wrap: break-word;" >'. $row['reply_content'] .'</p>

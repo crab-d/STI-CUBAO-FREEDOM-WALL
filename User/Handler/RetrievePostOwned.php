@@ -56,10 +56,28 @@ while ($row = mysqli_fetch_assoc($result)) {
     
     $htmlContent .= '
     <div data-post-id="' . $row['post_id'] . '" class="user_post bg-light rounded-2 shadow-sm border my-2 p-0 col-12 col-lg-9 d-flex flex-column overflow-hidden container flex-shrink-0">
-        <div id="PostCard_Header" class="bg-light m-0 d-flex justify-content-between p-2">
+        <div id="PostCard_Header" class="bg-light m-0 align-items-center d-flex justify-content-between p-2">
             <p class="m-0 primary-fs">' . getUserDisplayName($row["account_id"]) . '</p>
- 
-            <p class="m-0 primary-fs">' . $row['post_date'] . '</p>
+
+            <div class="d-flex gap-3 p-0 align-items-center justify-content-center">
+                <p class="m-0 primary-fs">' . $row['post_date'] . '</p>
+                <button class="p-0 m-0 bg-transparent border-0 primary-fs text-danger" data-bs-toggle="modal" data-bs-target="#deleteModal-'. $row['post_id'].'" >delete</button>
+                
+                <div class="modal fade" id="deleteModal-'. $row['post_id'] .'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                  
+                    <div class="modal-body">
+                        Delete this post?
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                        <button id="delete_post_btn" type="button" class="delete_post_btn btn btn-primary" >Yes</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
         </div>
 
         <div id="PostCard_Body" class="text-white p-5" style="background-color: ' . $postColor . '">
@@ -108,7 +126,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     </div>
  
     ';
-    
 }
 
 header('Content-Type: application/json');

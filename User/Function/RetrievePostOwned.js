@@ -49,7 +49,7 @@ $(document).ready(function () {
 
     if (!bottomReach && scrollTop + divHeight >= scrollHeight - 1) {
       bottomReach = true;
-      loadPosts(PostFilter);
+      loadPosts();
       bottomReach = false;
     }
   });

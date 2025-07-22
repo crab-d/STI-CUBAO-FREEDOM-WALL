@@ -23,6 +23,8 @@ $(document).ready(() => {
         event.preventDefault()
         $comment_content = $(this).find('#comment_input');
         $comment_val = $comment_content.val();
+        if ($comment_val.trim() == "") return;
+
         $post_id = $(this).find('input[name="post_id"]').val();
         sendComment($comment_val, $post_id)
         $comment_content.val('');

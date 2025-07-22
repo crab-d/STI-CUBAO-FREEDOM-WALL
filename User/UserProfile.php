@@ -18,8 +18,8 @@ $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
                 </div>
                 <div class="d-flex justify-content-end">
                     <div class="tab_content p-1 px-2 primary-color" ><i class="tab_content bi bi-file-post-fill text-white"></i></div>
-                    <div class="public_chat p-1 px-2 primary-color" ><i class=" bi bi-chat-square-dots-fill text-white"></i></div>
-                    <div class="tab_menu primary-color px-2 p-1"><i class="bi text-white bi-list"></i></div>
+                    <div class="public_chat p-1 px-2 primary-color" ><i class="bi bi-bell-fill text-white"></i></div>
+                    <div class="tab_menu primary-color px-2 p-1"><i class="bi bi-person-square text-white"></i></div>
 
                 </div>
             </div>  
@@ -87,8 +87,8 @@ $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
                 </div>
                 <div class="d-flex justify-content-end">
                     <div class="tab_content p-1 px-2 primary-color" ><i class="tab_content bi bi-file-post-fill text-white"></i></div>
-                    <div class="public_chat p-1 px-2 primary-color" ><i class=" bi bi-chat-square-dots-fill text-white"></i></div>
-                    <div class="tab_menu primary-color px-2 p-1"><i class="bi text-white bi-list"></i></div>
+                    <div class="public_chat p-1 px-2 primary-color" ><i class="bi bi-bell-fill text-white"></i></div>
+                    <div class="tab_menu primary-color px-2 p-1"><i class="bi bi-person-square text-white"></i></div>
 
                 </div>
             </div>  
@@ -144,8 +144,8 @@ $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
                 </div>
                 <div class="d-flex justify-content-end">
                     <div class="tab_content p-1 px-2 primary-color" ><i class="tab_content bi bi-file-post-fill text-white"></i></div>
-                    <div class="public_chat p-1 px-2 primary-color" ><i class=" bi bi-chat-square-dots-fill text-white"></i></div>
-                    <div class="tab_menu primary-color px-2 p-1"><i class="bi text-white bi-list"></i></div>
+                    <div class="public_chat p-1 px-2 primary-color" ><i class="bi bi-bell-fill text-white"></i></div>
+                    <div class="tab_menu primary-color px-2 p-1"><i class="bi bi-person-square text-white"></i></div>
 
                 </div>
             </div>  
@@ -169,6 +169,8 @@ $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
     <script src="../User/Function/ReplyComment.js"></script>
     <script src="../User/Function/LikePost.js"></script>    
     <script src="../User/Function/MentionUserFunction.js"></script>
+    <script src="../User/Function/HeaderTabFunction.js"></script>
+    <script src="../User/Function/deletePost.js"></script>
 
     <script>
         $('#profile').on('click', ()=>{

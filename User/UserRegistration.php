@@ -14,6 +14,7 @@ function retrive_user_data() {
         if ((bool) $row['is_active']) {
             $_SESSION['account_id'] = $row['account_id'];
             $_SESSION['display_name'] = $row['display_name'];
+            $_SESSION['profile'] = $row['profile_color'];
             $_SESSION['firstName'] = $row['user_firstname'];
             $_SESSION['lastName'] = $row['user_lastname'];
             $_SESSION['email'] = $row['school_email'];

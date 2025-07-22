@@ -3,7 +3,7 @@ include '../User/Components/UserMetaData.php';
 include '../User/Handler/CreatePost.php';
 
 $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
-
+ 
 ?>
 <body class="bg-light">
     <div class="container-fluid row m-0 p-0">
@@ -38,26 +38,33 @@ $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
                     <div class="d-flex justify-content-center flex-column shadow-sm rounded bg-light align-items-center">
                         <p class="m-0 poppins-medium primary-fs w-100 text-start primary-color text-white p-1 ps-2">User profile</p>
                         <div class="d-flex align-items-center py-3 flex-column">
-                            <div class="rounded-circle primary-color" style="height:10vh; width:10vh;" ></div>
+                            <div class="rounded-circle mb-3" style="background-color: <?php echo $_SESSION['profile']?> ;height:10vh; width:10vh;" ></div>
                             <p class="fw-bold fs-6 m-0"><?php echo $_SESSION['display_name'] ?></p>
                             <p class="primary-fs m-0 text-black-50"><?php echo $Fullname ?></p>
                         </div>
                     </div>
-                    <button data-bs-toggle="modal" data-bs-target="#edit_profile_modal" class="btn primary-color m-0 w-100 poppins-medium text-white mt-3">Edit profile</button>
+                    <button id="edit_profile" data-bs-toggle="modal" data-bs-target="#edit_profile_modal" class="btn primary-color m-0 w-100 poppins-medium text-white mt-3">Edit profile</button>
 
                         <div class="modal fade" id="edit_profile_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                               
+                                <div class="modal-body p-0 py-3">
+                                    <div class="d-flex flex-column align-items-center gap-3">
+                                        <div class="border rounded-circle" style="background-color: <?php echo $_SESSION['profile']?> ;height: 10vh; width: 10vh;"></div>
+                                        <div class="d-flex justify-content-between w-100 bg-light p-2 align-items-center">
+                                            <p class="primary-fs poppins-medium fw-bold text-black-50 m-0">Profile color</p>
+                                            <input id="user_profile_color" type="color" class="p-0" name="profile_color" value="<?php echo $_SESSION['profile']?>">
+                                        </div>
+                                        <div class="d-flex justify-content-between w-100 p-2 align-items-center">
+                                            <p class="primary-fs poppins-medium fw-bold text-black-50 m-0">Display name</p>
+                                            <input id="user_display_name" type="text" class="p-1 rounded-sm bg-light primary-fs poppins-regular border-1 border-dark-subtle" maxlength="20" value="<?php echo $_SESSION['display_name'] ?>" name="profile_color">
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="modal-body">
-                                    ...
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                <div class="modal-footer p-0">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                    <button id="profile_submit" type="button" class="btn btn-primary">Save changes</button>
                                 </div>
                                 </div>
                             </div>
@@ -159,9 +166,45 @@ $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
     <script src="../User/Function/RetrievePostComment.js"></script>
     <script src="../User/Function/RetrievePostOwned.js"></script>
+    <script src="../User/Function/ReplyComment.js"></script>
+    <script src="../User/Function/LikePost.js"></script>    
+    <script src="../User/Function/MentionUserFunction.js"></script>
+
     <script>
         $('#profile').on('click', ()=>{
             window.location.href = '../User/UserDashboard.php';
+        })
+
+        $('#edit_profile').on('click', () =>{
+            $('#user_profile_color').val('<?php echo $_SESSION['profile'] ?>')
+            $('#user_display_name').val('<?php echo $_SESSION['display_name'] ?>')
+        })
+
+        $('#profile_submit').on('click', function(event) {
+            event.preventDefault();
+            let current_profile_color = '<?php echo $_SESSION['profile'] ?>'
+            let current_display_name = '<?php echo $_SESSION['display_name'] ?>'
+            let new_profile_color = $('#user_profile_color').val();
+            let new_display_name = $('#user_display_name').val();
+
+            console.log(new_profile_color + new_display_name);
+
+
+            if (current_profile_color === new_profile_color && current_display_name === new_display_name ) return
+            
+            $.ajax({
+                url: '../User/Handler/UpdateUserProfile.php',
+                type: 'POST',
+                data: {
+                    profile_color: new_profile_color,
+                    display_name: new_display_name
+                },
+                success: function(response){
+                    location.reload()
+                },
+                error: function() {
+                }
+            })
         })
     </script>
 </body>

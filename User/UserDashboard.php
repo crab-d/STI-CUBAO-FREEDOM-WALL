@@ -36,12 +36,20 @@ if (!isset($_SESSION['is_active'])) {
                 <div class="p-2 d-flex flex-column vh-100">
                 <div class="d-flex align-content-center align-items-center p-0 mb-3">
                     <p class="m-0 primary-text poppins-medium fw-bold">STI CUBAO FREEDOM WALL </p>
-                    <small class="fw-bold opacity-50 ms-2 m-0 fst-italic text-dark" style="font-size: 7px;">Alpha v.3.4</small>
+                    <small class="fw-bold opacity-50 ms-2 m-0 fst-italic text-dark" style="font-size: 7px;">Beta v.2.2</small>
                 </div>
 
                 <div id="profile" style="cursor: pointer;" class="bg-light shadow-sm rounded overflow-hidden d-flex align-items-center">
                     <div class="primary-color p-2"><i class="bi m-0 bi-person-square text-white"></i></div>
-                    <p  class="m-0 ms-2"><?php echo $Fullname ?></p>
+                    <p  class="m-0 ms-2"> Profile </p>
+                </div> 
+                <div id="elms" style="cursor: pointer;" class="bg-light shadow-sm rounded mt-2 overflow-hidden d-flex align-items-center">
+                    <div class="yellow-color p-2"><i class="bi bi-book-half"></i></div>
+                    <p  class="m-0 ms-2">eLMS</p>
+                </div> 
+                <div id="oneSTI" style="cursor: pointer;" class="bg-light shadow-sm rounded mt-2 overflow-hidden d-flex align-items-center">
+                    <div class="yellow-color p-2"><i class="bi bi-phone-fill"></i></div>
+                    <p  class="m-0 ms-2">one STI</p>
                 </div> 
                 <div class=" overflow-scroll my-4">
                 <div class=" bg-light overflow-hidden shadow-sm rounded d-flex flex-column align-items-center">
@@ -181,8 +189,12 @@ if (!isset($_SESSION['is_active'])) {
         $('#profile').on('click', ()=>{
             window.location.href = '../User/UserProfile.php';
         })
-
-  
+        $('#elms').on('click', ()=>{
+            window.location.href = 'https://elms.sti.edu';
+        })
+        $('#oneSTI').on('click', ()=>{
+            window.location.href = 'https://one.sti.edu';
+        })
     </script>
 
 </body>

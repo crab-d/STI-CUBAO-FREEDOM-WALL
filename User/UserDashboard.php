@@ -9,7 +9,7 @@ if (!isset($_SESSION['is_active'])) {
     header('Location: ../User/UserRegistration.php');
     exit;
 }
-
+ 
 ?>
 
 
@@ -30,13 +30,13 @@ if (!isset($_SESSION['is_active'])) {
                     <div class="tab_content p-1 px-2 primary-color" ><i class="tab_content bi bi-file-post-fill text-white"></i></div>
                     <div class="public_chat p-1 px-2 primary-color" ><i class=" bi bi-chat-square-dots-fill text-white"></i></div>
                     <div class="tab_menu primary-color px-2 p-1"><i class="bi text-white bi-list"></i></div>
-
+                
                 </div>
             </div>  
                 <div class="p-2 d-flex flex-column vh-100">
                 <div class="d-flex align-content-center align-items-center p-0 mb-3">
                     <p class="m-0 primary-text poppins-medium fw-bold">STI CUBAO FREEDOM WALL </p>
-                    <small class="fw-bold opacity-50 ms-2 m-0 fst-italic text-dark" style="font-size: 7px;">Beta v.2.2</small>
+                    <small class="fw-bold opacity-50 ms-2 m-0 fst-italic text-dark" style="font-size: 7px;">Beta v.2.3</small>
                 </div>
 
                 <div id="profile" style="cursor: pointer;" class="bg-light shadow-sm rounded overflow-hidden d-flex align-items-center">
@@ -51,6 +51,20 @@ if (!isset($_SESSION['is_active'])) {
                     <div class="yellow-color p-2"><i class="bi bi-phone-fill"></i></div>
                     <p  class="m-0 ms-2">one STI</p>
                 </div> 
+                <?php
+                    if (true) {
+                        echo  '
+                            <div id="oneSTI" style="cursor: pointer;" class="bg-light shadow-sm rounded mt-2 overflow-hidden d-flex align-items-center">
+                                <div class="primary-color p-2"><i class="bi  text-white bi-person-circle"></i></div>
+                                <a class=" w-100 text-black bg-light shadow-sm rounded  overflow-hidden d-flex align-items-center m-0 ms-2 p-0 text-decoration-none" href="../Admin/AdminDashboard.php">  Admin</a>
+                            </div> 
+                        ';
+              
+                    } else {
+     
+
+                    }
+                ?>
                 <div class=" overflow-scroll my-4">
                 <div class=" bg-light overflow-hidden shadow-sm rounded d-flex flex-column align-items-center">
                     <p class="primary-color w-100 text-center text-white">Chanels</p>

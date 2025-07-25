@@ -185,7 +185,7 @@
     </div>
     <div class="container-lg col d-flex justify-content-center">
         <div class=" col-md-6 cold-sm-12 rounded-sm shadow-sm d-flex flex-column roadMap-block justify-content-center">
-                <div class="p-5 homepage-bg-about h-100 w-100"></div>
+            <img src="../Resources/Image/STIFW.png" class="h-100 w-100">
             <p class="text-center bg-info text-white p-1 poppins-medium"> STI Cubao Freedom Wall Website</p>
             <p class="p-2"> Enhanced and systemized version of STI Cubao Freedom Wall.</p>
         </div>

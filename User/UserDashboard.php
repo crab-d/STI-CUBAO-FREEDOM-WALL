@@ -9,7 +9,7 @@ if (!isset($_SESSION['is_active'])) {
     header('Location: ../User/UserRegistration.php');
     exit;
 }
- 
+
 ?>
 
 
@@ -52,7 +52,7 @@ if (!isset($_SESSION['is_active'])) {
                     <p  class="m-0 ms-2">one STI</p>
                 </div> 
                 <?php
-                    if (true) {
+                    if ((bool) $_SESSION['is_admin']) {
                         echo  '
                             <div id="oneSTI" style="cursor: pointer;" class="bg-light shadow-sm rounded mt-2 overflow-hidden d-flex align-items-center">
                                 <div class="primary-color p-2"><i class="bi  text-white bi-person-circle"></i></div>

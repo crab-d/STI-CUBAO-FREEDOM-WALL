@@ -12,11 +12,54 @@ Alpha V.3
 - User Mention system
 - notification system 
 
-Alpha V.4
-- User profile
+A V.3.1
+- Fix reply bug
+-DESC COMMENT
+: FILES 
+- ReplyComent.js
+- RetrieveComment.php
 
-Alpha V.5
-- Search user
+A v.32
+- Add dates to reply
+- remove reply suggestion
+: FILES
+- RetrieveComment.php
+- RetrievePost.php
 
----------------
+A v-3.3
+- Add loading label in comments
+: File RetrievePost.php
+
+A v-3.4
+- Update information in Homepage
+: homepage.php
+
+A v.3.4
+- Update post, comment font-size
+- add user profile notice label
+- fix public chat message overlapping
+- relayout user header
+FILES
+userprofile
+userdashboard
+RetrieveComment.php
+RetrieveMessage.php
+
+A v.3.5
+- fix public chat sender message width
+FILES
+retreieveMessage.php
+
 Beta V.1
+-- User profile
+-- Edit user profile
+
+Beta V.2
+-- Delete post
+
+Beta V.2.1
+-- Change header tab icons
+
+Beta V.2.2
+-- Change comment bg
+

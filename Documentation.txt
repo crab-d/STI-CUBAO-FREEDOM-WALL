@@ -28,15 +28,14 @@ July 18 2025
 July 19 2025
 - Published Alpha Version for testing
 - Comment Replying
+
 July 20 2025
+- Relayout user UI
+- fix comment width
 
 ==================
 
 WAITLIST:
-chat liking function
-chat reply function
-user profile 
-delete post (just hide it)
 update post
 Public announcement
 notification
@@ -47,7 +46,6 @@ Use DB for modifying contents (Initial admin panel)
 __ SOFTLAUNCH JUL 25 2025 __
 ADDITIONAL FOLLOW UP FEATURES:
                                                                                                                                                                                                                                                                                                                                                                                    
-
 comment section long polling
 admin dashboard 
 turning off public chat function
@@ -56,3 +54,4 @@ android app web view version
 content algorithm
 ....
 
+ 

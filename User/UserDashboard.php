@@ -41,22 +41,30 @@ if (!isset($_SESSION['is_active'])) {
 
                 <div id="profile" style="cursor: pointer;" class="bg-light shadow-sm rounded overflow-hidden d-flex align-items-center">
                     <div class="primary-color p-2"><i class="bi m-0 bi-person-square text-white"></i></div>
-                    <p  class="m-0 ms-2"> Profile </p>
+                    <p  class="m-0 ms-2 primary-fs"> Profile </p>
                 </div> 
                 <div id="elms" style="cursor: pointer;" class="bg-light shadow-sm rounded mt-2 overflow-hidden d-flex align-items-center">
                     <div class="yellow-color p-2"><i class="bi bi-book-half"></i></div>
-                    <p  class="m-0 ms-2">eLMS</p>
+                    <p  class="m-0 ms-2 primary-fs">eLMS</p>
                 </div> 
                 <div id="oneSTI" style="cursor: pointer;" class="bg-light shadow-sm rounded mt-2 overflow-hidden d-flex align-items-center">
                     <div class="yellow-color p-2"><i class="bi bi-phone-fill"></i></div>
-                    <p  class="m-0 ms-2">one STI</p>
+                    <p  class="m-0 ms-2 primary-fs">one STI</p>
+                </div> 
+                <div id="artGallery" style="cursor: pointer;" class="bg-light shadow-sm rounded mt-2 overflow-hidden d-flex align-items-center">
+                    <div class="primary-color p-2"><i class="bi text-white bi-brush-fill"></i></div>
+                    <p  class="m-0 ms-2 primary-fs">Student art gallery</p>
+                </div> 
+                <div id="webPortfolio" style="cursor: pointer;" class="bg-light shadow-sm rounded mt-2 overflow-hidden d-flex align-items-center">
+                    <div class="primary-color p-2"><i class="bi text-white bi-file-earmark-code-fill"></i></div>
+                    <p  class="m-0 ms-2 primary-fs">Student web portfolio</p>
                 </div> 
                 <?php
                     if ((bool) $_SESSION['is_admin']) {
                         echo  '
                             <div id="oneSTI" style="cursor: pointer;" class="bg-light shadow-sm rounded mt-2 overflow-hidden d-flex align-items-center">
                                 <div class="primary-color p-2"><i class="bi  text-white bi-person-circle"></i></div>
-                                <a class=" w-100 text-black bg-light shadow-sm rounded  overflow-hidden d-flex align-items-center m-0 ms-2 p-0 text-decoration-none" href="../Admin/AdminDashboard.php">  Admin</a>
+                                <a class=" w-100 text-black  rounded  overflow-hidden d-flex align-items-center m-0 ps-2 p-0 primary-fs text-decoration-none" href="../Admin/AdminDashboard.php">  Admin</a>
                             </div> 
                         ';
               
@@ -208,6 +216,12 @@ if (!isset($_SESSION['is_active'])) {
         })
         $('#oneSTI').on('click', ()=>{
             window.location.href = 'https://one.sti.edu';
+        })
+        $('#artGallery').on('click', ()=>{
+            window.location.href = '../User/StudentArtGallery.php';
+        })
+        $('#webPortfolio').on('click', ()=>{
+            window.location.href = '../User/StudentWebPortfolio.php';
         })
     </script>
 

@@ -36,7 +36,7 @@ if (!isset($_SESSION['is_active'])) {
                 <div class="p-2 d-flex flex-column vh-100">
                 <div class="d-flex align-content-center align-items-center p-0 mb-3">
                     <p class="m-0 primary-text poppins-medium fw-bold">STI CUBAO FREEDOM WALL </p>
-                    <small class="fw-bold opacity-50 ms-2 m-0 fst-italic text-dark" style="font-size: 7px;">Beta v.2.3</small>
+                    <small class="fw-bold opacity-50 ms-2 m-0 fst-italic text-dark" style="font-size: 7px;">Beta v.3.0</small>
                 </div>
 
                 <div id="profile" style="cursor: pointer;" class="bg-light shadow-sm rounded overflow-hidden d-flex align-items-center">
@@ -58,6 +58,10 @@ if (!isset($_SESSION['is_active'])) {
                 <div id="webPortfolio" style="cursor: pointer;" class="bg-light shadow-sm rounded mt-2 overflow-hidden d-flex align-items-center">
                     <div class="primary-color p-2"><i class="bi text-white bi-file-earmark-code-fill"></i></div>
                     <p  class="m-0 ms-2 primary-fs">Student web portfolio</p>
+                </div> 
+                <div id="culinaryArt" style="cursor: pointer;" class="bg-light shadow-sm rounded mt-2 overflow-hidden d-flex align-items-center">
+                    <div class="primary-color p-2"><i class="bi text-white bi-egg-fried"></i></div>
+                    <p  class="m-0 ms-2 primary-fs">Student culinary art</p>
                 </div> 
                 <?php
                     if ((bool) $_SESSION['is_admin']) {

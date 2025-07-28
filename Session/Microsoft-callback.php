@@ -1,13 +1,12 @@
 <?php
-$clientId = 'f4af1976-bef7-4b29-9b72-585a9333a99b';
-$clientSecret = 'nr28Q~uedYXut6CbyipJKra_p8RBngGZm8BvWaV2';
-$redirectUri = 'http://localhost/STI_FW/Session/microsoft-callback.php';
+$clientId = '';
+$clientSecret = '';
+$redirectUri = '';
 
 if (isset($_GET['code'])) {
     $code = $_GET['code'];
 
-    // Exchange code for access token
-    $tokenUrl = 'https://login.microsoftonline.com/common/oauth2/v2.0/token';
+    $tokenUrl = '';
 
     $data = [
         'client_id' => $clientId,

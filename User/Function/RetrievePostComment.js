@@ -26,7 +26,7 @@ $(document).ready(() => {
         if ($comment_val.trim() == "") return;
 
         $post_id = $(this).find('input[name="post_id"]').val();
-        sendComment(comment_val, $post_id)
+        sendComment($comment_val, $post_id)
         $comment_content.val('');
     })
 

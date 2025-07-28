@@ -64,9 +64,11 @@ function getMessages($conn, $defaultActiveValue, $lastChatId, $accountId) {
                 <div class="rounded-circle align-self-end me-1 flex-shrink-0" style="background-color: '. $sender['sender_profile_color'] .'; height: 15px; width: 15px;"></div>
                 <div class="d-flex flex-column gap-0" style="max-width:100%">
                     <p class="primary-fs m-0"><small>' . $sender['sender_display_name'] . '</small></p>
-                    <p class="p-0 m-0 primary-color primary-fs w-auto p-2 flex-shrink-0 text-white rounded" style=" overflow-wrap: break-word" >
+                    <div>
+                    <p class="p-0 m-0 w-auto primary-color primary-fs w-auto p-2 flex-shrink-0 text-white rounded" style=" overflow-wrap: break-word" >
                         ' . $chatContent . '
                     </p>
+                    </div>
                 </div>
             </div>';
         }

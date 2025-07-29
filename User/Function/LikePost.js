@@ -17,17 +17,21 @@ $(document).ready(function() {
         },
         success: function(response) {
           console.log('success')
-         
               currentLike++;
               likeElement.find('span').text(currentLike);
               likeElement.addClass('disabled-like')
-
         },
         error: function(xhr, error) {
           console.log('error' + xhr.status + ' ' + error)
-            
-              
         }
+    })
+    $.ajax({
+      url: '../User/Handler/NotificationLikeHandler.php',
+      type: 'POST',
+      data: {
+        post_ID: postId,
+        notif_TYPE: 'like'
+      }
     })
 
     

@@ -28,21 +28,29 @@ $(document).ready(()=>{
     })
 
     function sendReplyComment(reply_button_id, reply_input, post_id) {
-        $.ajax({
+        let reply_request = 
+            $.ajax({
                 url: '../User/Handler/ReplyComment.php',
                 type: 'POST',
                 data: {
                     post_id: post_id,
                     comment_id: reply_button_id,
                     reply_content: reply_input
-                },
-                success: function(response){
-                    loadComments(post_id,reply_button_id)
-                },
-                error: function(){
-                    console.log('failed')
                 }
             })
+        let notif_request = 
+            $.ajax({
+                url: '../User/Handler/NotificationHandler.php',
+                type: 'POST',
+                data: {
+                    post_ID: post_id,
+                    notif_TYPE: 'reply',
+                }
+            })
+
+        $.when(reply_request, notif_request).done(()=>{
+            loadComments(post_id,reply_button_id)
+        })
     }
 
 

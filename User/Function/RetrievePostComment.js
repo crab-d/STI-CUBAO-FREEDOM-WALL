@@ -30,20 +30,29 @@ $(document).ready(() => {
         $comment_content.val('');
     })
 
-    function sendComment($comment_content, $post_id) {
-        $.ajax({
+    function sendComment(comment_content, post_id) {
+        console.log("post_id:", post_id);
+
+        let sendNotif = $.ajax({
+            url: '../User/Handler/NotificationHandler.php',
+            type: 'POST',
+            data: {
+                post_ID: post_id,
+                notif_TYPE: 'comment',
+            }
+        })
+        let sendComment = $.ajax({
             url: '../User/Handler/SendComment.php',
             type: 'POST',
             data: {
-                post_id: $post_id,
-                comment_content: $comment_content
-            },
-            success: function(response){
-                loadComments($post_id);
-            },
-            error: function(xhr, error) {
-                console.log('failed 1' + xhr.status + error)
+                post_id: post_id,
+                comment_content: comment_content
             }
+        })
+        
+
+        $.when(sendComment, sendNotif).done( () => {
+            loadComments(post_id);
         })
     }
 })

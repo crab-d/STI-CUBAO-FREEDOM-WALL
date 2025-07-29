@@ -4,9 +4,9 @@
 include('../Database/db_connect.php');
 $account_id = $_SESSION['account_id'];
 
-$query = 'SELECT * FROM `notification` WHERE receiver_id = ? ORDER BY notification_id DESC';
-$stmt = mysqli_prepare($conn_contents, $query);
-mysqli_stmt_bind_param($stmt, 'i', $account_id);
+$query = 'SELECT * FROM `notification` WHERE receiver_id = ? AND NOT sender_id = ? ORDER BY notification_id DESC';
+$stmt = mysqli_prepare($conn_contents, $query); 
+mysqli_stmt_bind_param($stmt, 'ii', $account_id, $account_id);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 if (mysqli_num_rows($result) > 0) {

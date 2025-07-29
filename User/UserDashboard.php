@@ -91,14 +91,7 @@ if (!isset($_SESSION['is_active'])) {
                     </div>
                 </div>
                 <div class="flex-grow-1 my-3 primary-fs">
-                    <button class="primary-color rounded-bottom-1 text-white btn w-100 p-0">Notification [reference]</button>
-                    <div >
-                        <p class="w-100 p-2 m-0 border rounded bg-light poppins-medium" ><i class="bi bi-heart-fill text-danger me-2"></i> Someone liked your post</p>
-                        <p class="w-100 p-2 m-0 border rounded bg-light poppins-medium"><i class="bi bi-chat-right-dots-fill text-primary me-2"></i>Someone commented on your post</p>
-                        <p class="w-100 p-2 m-0 border rounded bg-light poppins-medium"><i class="bi bi-chat-right-dots-fill text-primary me-2"></i>Someone mentioned you</p>
-                        <p class="w-100 p-2 m-0 border rounded bg-light poppins-medium"><i class="bi bi-exclamation-diamond-fill text-warning me-2"></i>Your account has been muted for sending inappropriate words</p>
-
-                    </div>
+                    
                 </div>
                 </div>
                 <span class="flex-grow-1"></span>

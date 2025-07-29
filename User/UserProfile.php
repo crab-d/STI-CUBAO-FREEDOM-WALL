@@ -5,7 +5,7 @@ include '../User/Handler/CreatePost.php';
 $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
  
 ?>
-<body class="bg-light">
+<body class="bg-light poppins-regular">
     <div class="container-fluid row m-0 p-0">
         
         <!-- FIRST COL -->
@@ -154,8 +154,9 @@ $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
                 </div>
 
                 <div id="Notification_body" class="bg-white d-flex flex-column  overflow-scroll h-100 flex-grow-1 p-2 w-100 gap-3">
-                    <div id="Notification_container">
-                        
+                    <div id="Notification_container d-flex flex-column">
+                        <?php include('../User/Handler/RetrieveNotification.php')?>
+                      
                     </div>
                     
                 </div>

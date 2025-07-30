@@ -1,5 +1,11 @@
 <?php
-// include '../Session/SessionChecker.php';
+include '../Session/SessionChecker.php';
+
+if ((bool)$_SESSION['is_admin'] != true) {
+    header("Location: ../");
+    return;
+    exit;
+}
 ?>
 
 <!DOCTYPE html>

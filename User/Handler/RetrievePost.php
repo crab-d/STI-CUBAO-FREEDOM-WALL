@@ -69,7 +69,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         </div>
 
         <div id="PostCard_Body" class="text-white p-5" style="background-color: ' . $postColor . '">
-            <p class="text-center my-5" style="color: ' . $textColor . '">' . $row['post_content'] . '</p>
+            <p class="text-center my-5" style="color: ' . $textColor . '">' . nl2br($row['post_content']) . '</p>
         </div>
 
         <div id="PostCard_ActionBar" class="rounded bg-white d-flex justify-content-between p-2">';

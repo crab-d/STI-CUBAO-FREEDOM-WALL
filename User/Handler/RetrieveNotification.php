@@ -34,7 +34,7 @@ if (mysqli_num_rows($result) > 0) {
     }
    
 } else {
-   
+   echo "<p class='text-center w-100 fs-6'> You don't have any notification </p>";
 }
 
 function getUserProfile($accountId) {

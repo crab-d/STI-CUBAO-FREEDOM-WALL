@@ -23,16 +23,16 @@ if (!isset($_SESSION['is_active'])) {
             <div class=" d-flex flex-column vh-100">
                  
                 <div style="backdrop-filter: blur(100px); background: rgba(255, 255, 255, 0.7);" class="d-block d-lg-none  border-bottom border-dark-subtle w-100 sticky-top  d-flex justify-content-between align-items-center m-0">
-                <div>
-                    <p class="poopins-medium text-dark fw-bold m-0 ms-3">SCFW</p>
-                </div>
-                <div class="d-flex justify-content-end">
-                    <div class="tab_content p-1 px-2 primary-color" ><i class="tab_content bi bi-file-post-fill text-white"></i></div>
-                    <div class="public_chat p-1 px-2 primary-color" ><i class=" bi bi-chat-square-dots-fill text-white"></i></div>
-                    <div class="tab_menu primary-color px-2 p-1"><i class="bi text-white bi-list"></i></div>
-                
-                </div>
-            </div>  
+                    <div>
+                        <p class="poopins-medium text-dark fw-bold m-0 ms-3">SCFW</p>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <div class="tab_content p-1 px-2 primary-color" ><i class="tab_content bi bi-file-post-fill text-white"></i></div>
+                        <div class="public_chat p-1 px-2 primary-color" ><i class=" bi bi-chat-square-dots-fill text-white"></i></div>
+                        <div class="tab_menu primary-color px-2 p-1"><i class="bi text-white bi-list"></i></div>
+                    
+                    </div>
+                </div>  
                 <div class="p-2 d-flex flex-column vh-100">
                 <div class="d-flex align-content-center align-items-center p-0 mb-3">
                     <p class="m-0 primary-text poppins-medium fw-bold">STI CUBAO FREEDOM WALL </p>
@@ -68,7 +68,7 @@ if (!isset($_SESSION['is_active'])) {
                         echo  '
                             <div id="oneSTI" style="cursor: pointer;" class="bg-light shadow-sm rounded mt-2 overflow-hidden d-flex align-items-center">
                                 <div class="primary-color p-2"><i class="bi  text-white bi-person-circle"></i></div>
-                                <a class=" w-100 text-black  rounded  overflow-hidden d-flex align-items-center m-0 ps-2 p-0 primary-fs text-decoration-none" href="../Admin/AdminDashboard.php">  Admin</a>
+                                <a class=" w-100 text-black  rounded  overflow-hidden d-flex align-items-center m-0 ps-2 p-0 primary-fs text-decoration-none" href="../Admin/AdminDashboard.php">Admin Dashboard</a>
                             </div> 
                         ';
               
@@ -78,21 +78,18 @@ if (!isset($_SESSION['is_active'])) {
                     }
                 ?>
                 <div class=" overflow-scroll my-4">
-                <div class=" bg-light overflow-hidden shadow-sm rounded d-flex flex-column align-items-center">
-                    <p class="primary-color w-100 text-center text-white">Chanels</p>
-                    <div class="p-0 w-100 primary-fs">
-                        <button type="submit" name="postFilter" value="" class="p-2 text-start mb-4 bg-white w-100 rounded border">All Chanels</button>
-                        <button type="submit" name="postFilter" value="random_message" class="p-2 bg-white w-100 rounded border text-start"><span class="primary-color p-1 me-2"></span>Random Message</button>
-                        <button type="submit" name="postFilter" value="rants" class="p-2 bg-white w-100 rounded border text-start"><span class="bg-warning p-1 me-2"></span>Rants</button>
-                        <button type="submit" name="postFilter" value="confession" class="p-2 bg-white w-100 rounded border text-start"><span class="bg-danger p-1 me-2"></span>Confession</button>
-                        <button type="submit" name="postFilter" value="questions" class="p-2 bg-white w-100 rounded border text-start"><span class="bg-primary p-1 me-2"></span>Questions</button>
-                        <button type="submit" name="postFilter" value="lf_classmates" class="p-2 bg-white w-100 rounded border text-start"><span class=" bg-success p-1 me-2"></span>LF Classmates</button>
-                        <button type="submit" name="postFilter" value="lost_and_found" class="p-2 bg-white w-100 rounded border text-start"><span class=" bg-dark p-1 me-2"></span>Lost and Found</button>
+                    <div class=" bg-light overflow-hidden shadow-sm rounded d-flex flex-column align-items-center">
+                        <p class="primary-color w-100 text-center text-white">Chanels</p>
+                        <div class="p-0 w-100 primary-fs">
+                            <button type="submit" name="postFilter" value="" class="p-2 text-start mb-4 bg-white w-100 rounded border">All Chanels</button>
+                            <button type="submit" name="postFilter" value="random_message" class="p-2 bg-white w-100 rounded border text-start"><span class="primary-color p-1 me-2"></span>Random Message</button>
+                            <button type="submit" name="postFilter" value="rants" class="p-2 bg-white w-100 rounded border text-start"><span class="bg-warning p-1 me-2"></span>Rants</button>
+                            <button type="submit" name="postFilter" value="confession" class="p-2 bg-white w-100 rounded border text-start"><span class="bg-danger p-1 me-2"></span>Confession</button>
+                            <button type="submit" name="postFilter" value="questions" class="p-2 bg-white w-100 rounded border text-start"><span class="bg-primary p-1 me-2"></span>Questions</button>
+                            <button type="submit" name="postFilter" value="lf_classmates" class="p-2 bg-white w-100 rounded border text-start"><span class=" bg-success p-1 me-2"></span>LF Classmates</button>
+                            <button type="submit" name="postFilter" value="lost_and_found" class="p-2 bg-white w-100 rounded border text-start"><span class=" bg-dark p-1 me-2"></span>Lost and Found</button>
+                        </div>
                     </div>
-                </div>
-                <div class="flex-grow-1 my-3 primary-fs">
-                    
-                </div>
                 </div>
                 <span class="flex-grow-1"></span>
                 <div>
@@ -186,8 +183,8 @@ if (!isset($_SESSION['is_active'])) {
 
                 <div id="PublicChatAction" class=" d-flex bg-light w-100 mb-5 p-2">   
            
-                        <input id="IPT_chatContent" name="chat_content" type="text" class=" comment-input-box primary-fs bg-white rounded border-0 shadow-sm w-100 border-1 ps-2" placeholder="Type a Message">
-                        <button id="BTN_chatSend" name="send_message" type="submit" class="primary-color btn text-white shadow-sm">Send</button>  
+                    <input id="IPT_chatContent" name="chat_content" type="text" class=" comment-input-box primary-fs bg-white rounded border-0 shadow-sm w-100 border-1 ps-2" placeholder="Type a Message">
+                    <button id="BTN_chatSend" name="send_message" type="submit" class="primary-color btn text-white shadow-sm">Send</button>  
                  
                 </div>
             </div>

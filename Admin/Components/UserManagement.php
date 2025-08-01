@@ -97,7 +97,7 @@ $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
         </div>
         
     </div>
-    <div class="col d-flex flex-column bg-white shadow-sm rounded-1 p-3 gap-2">
+    <div class="col d-flex d-none d-lg-block flex-column bg-white shadow-sm rounded-1 p-3 gap-2 h-100">
         <div class="d-flex justify-content-center flex-column shadow-sm rounded bg-light align-items-center">
             <p class="m-0 poppins-medium primary-fs w-100 text-start primary-color text-white p-1 ps-2">User profile</p>
             <div class="d-flex align-items-center py-3 flex-column">

@@ -23,3 +23,10 @@ Announcement
 -- 
 
 
+Notification
+-- Comment - PostID - Join PostID - account-id
+-- Comment -- If comment - accoundID = sessionID SKIP -- else comment - postID JOIN user_post - accoundID
+
+-- Notification - notif_id - accoundID - SenderID - post-id - Date
+
+

@@ -86,7 +86,7 @@ if (!isset($_SESSION['is_active'])) {
                             <button type="submit" name="postFilter" value="rants" class="p-2 bg-white w-100 rounded border text-start"><span class="bg-warning p-1 me-2"></span>Rants</button>
                             <button type="submit" name="postFilter" value="confession" class="p-2 bg-white w-100 rounded border text-start"><span class="bg-danger p-1 me-2"></span>Confession</button>
                             <button type="submit" name="postFilter" value="questions" class="p-2 bg-white w-100 rounded border text-start"><span class="bg-primary p-1 me-2"></span>Questions</button>
-                            <button type="submit" name="postFilter" value="lf_classmates" class="p-2 bg-white w-100 rounded border text-start"><span class=" bg-success p-1 me-2"></span>LF Classmates</button>
+                            <button type="submit" name="postFilter" value="lf_classmates" class="p-2 bg-white w-100 rounded border text-start"><span class=" bg-success p-1 me-2"></span>Looking For</button>
                             <button type="submit" name="postFilter" value="lost_and_found" class="p-2 bg-white w-100 rounded border text-start"><span class=" bg-dark p-1 me-2"></span>Lost and Found</button>
                         </div>
                     </div>
@@ -129,7 +129,7 @@ if (!isset($_SESSION['is_active'])) {
                                             <option value="rants">Rants</option>
                                             <option value="confession">Confession</option>
                                             <option value="questions">Questions</option>
-                                            <option value="lf_classmates">LF Classmates</option>
+                                            <option value="lf_classmates">Looking For</option>
                                             <option value="lost_and_found">Lost and Found</option>
                                         </select>
                                     </div>

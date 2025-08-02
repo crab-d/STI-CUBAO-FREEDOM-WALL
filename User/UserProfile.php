@@ -109,7 +109,7 @@ $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
                                             <option value="rants">Rants</option>
                                             <option value="confession">Confession</option>
                                             <option value="questions">Questions</option>
-                                            <option value="lf_classmates">LF Classmates</option>
+                                            <option value="lf_classmates">Looking For</option>
                                             <option value="lost_and_found">Lost and Found</option>
                                         </select>
                                     </div>

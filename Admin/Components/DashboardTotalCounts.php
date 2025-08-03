@@ -1,7 +1,7 @@
 <div id="admin_dashboard" class="content p-0 m-0 justify-content-center d-flex flex-column align-items-center">
     <div class="container row row-cols-1 row-cols-sm-2 row-cols-lg-4">
         <div class="d-flex col p-2 overflow-hidden flex-column flex-shrink-0">
-            <p class="text-center primary-color p-0 text-white fw-semibold poppins-medium m-0"><i class="bi me-2 text-white bi-file-post-fill"></i>Total post </p>
+            <p class="text-center primary-color p-0 text-white fw-semibold poppins-medium m-0">Total post </p>
             <div class="align-items-center rounded shadow-sm bg-white justify-content-center flex-grow-1 rounded shadow-sm d-flex p-2">
 
                 <p class=" fs-3 m-0 text-center fw-bold poppins-medium my-3 p-0">
@@ -11,7 +11,7 @@
         </div>
 
         <div class="d-flex col p-2  rounded overflow-hidden flex-column flex-shrink-0">
-            <p class="text-center bg-success p-0 text-white fw-semibold poppins-medium m-0"><i class="bi me-2 text-white bi-file-post-fill"></i>Total Comment </p>
+            <p class="text-center bg-success p-0 text-white fw-semibold poppins-medium m-0">Total Comment </p>
             <div class="align-items-center bg-white justify-content-center flex-grow-1 rounded shadow-sm d-flex p-2">
 
                 <p class=" fs-3 m-0 text-center fw-bold poppins-medium my-3 p-0">
@@ -22,7 +22,7 @@
         </div>
 
         <div class="d-flex col p-2  rounded overflow-hidden flex-column flex-shrink-2">
-            <p class="text-center bg-danger p-0 text-white fw-semibold poppins-medium m-0"><i class="bi me-2 text-white bi-file-post-fill"></i>Total Message </p>
+            <p class="text-center bg-danger p-0 text-white fw-semibold poppins-medium m-0">Total Message </p>
             <div class="align-items-center bg-white justify-content-center flex-grow-1 rounded shadow-sm d-flex p-2">
 
                 <p class=" fs-3 m-0 text-center fw-bold poppins-medium my-3 p-0">
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="d-flex col p-2 rounded overflow-hidden flex-column flex-shrink-0">
-            <p class="text-center bg-warning p-0 text-white fw-semibold poppins-medium m-0"><i class="bi me-2 text-white bi-file-post-fill"></i>Total Like </p>
+            <p class="text-center bg-warning p-0 text-white fw-semibold poppins-medium m-0">Total Like </p>
             <div class="align-items-center  bg-white justify-content-center flex-grow-1 rounded shadow-sm d-flex p-2">
 
                 <p class=" fs-3 m-0 text-center fw-bold poppins-medium  my-3 p-0">
@@ -46,7 +46,7 @@
     <div class="container mt-5 row row-cols-1 row-cols-sm-2 row-cols-lg-4">
 
         <div class="d-flex col p-2  rounded overflow-hidden flex-column flex-shrink-0">
-            <p class="text-center primary-color p-0 text-white fw-semibold poppins-medium m-0"><i class="bi me-2 text-white bi-file-post-fill"></i>Total Accounts </p>
+            <p class="text-center primary-color p-0 text-white fw-semibold poppins-medium m-0">Total Accounts </p>
             <div class="align-items-center bg-white justify-content-center flex-grow-1 rounded shadow-sm d-flex p-2">
 
                 <p class=" fs-3 m-0 text-center fw-bold poppins-medium my-3 p-0">
@@ -56,7 +56,7 @@
         </div>
 
         <div class="d-flex col p-2  rounded overflow-hidden flex-column flex-shrink-0">
-            <p class="text-center bg-success p-0 text-white fw-semibold poppins-medium m-0"><i class="bi me-2 text-white bi-file-post-fill"></i>Total Active </p>
+            <p class="text-center bg-success p-0 text-white fw-semibold poppins-medium m-0">Total Active </p>
             <div class="align-items-center bg-white justify-content-center flex-grow-1 rounded shadow-sm d-flex p-2">
 
                 <p class=" fs-3 m-0 text-center fw-bold poppins-medium my-3 p-0">
@@ -66,7 +66,7 @@
         </div>
 
         <div class="d-flex col p-2  rounded overflow-hidden flex-column flex-shrink-2">
-            <p class="text-center bg-danger p-0 text-white fw-semibold poppins-medium m-0"><i class="bi me-2 text-white bi-file-post-fill"></i>Total Muted </p>
+            <p class="text-center bg-danger p-0 text-white fw-semibold poppins-medium m-0">Total Muted </p>
             <div class="align-items-center bg-white justify-content-center flex-grow-1 rounded shadow-sm d-flex p-2">
 
                 <p class=" fs-3 m-0 text-center fw-bold poppins-medium my-3 p-0">
@@ -76,7 +76,7 @@
             </div>
         </div>
         <div class="d-flex col p-2 rounded overflow-hidden flex-column flex-shrink-0">
-            <p class="text-center bg-warning p-0 text-white fw-semibold poppins-medium m-0"><i class="bi me-2 text-white bi-file-post-fill"></i>Total Inactive </p>
+            <p class="text-center bg-warning p-0 text-white fw-semibold poppins-medium m-0">Total Inactive </p>
             <div class="align-items-center  bg-white justify-content-center  flex-grow-1 rounded shadow-sm d-flex p-2">
 
                 <p class=" fs-3 m-0 text-center fw-bold poppins-medium my-3 p-0">

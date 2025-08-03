@@ -23,81 +23,11 @@ $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
             </div>
 
             <div id="users_container" class="d-flex flex-column gap-1">
-                <div class="d-flex align-items-center bg-light p-2 rounded-1 shadow-sm">
-                    <div class="bg-danger me-3" style="height: 20px; width: 20px"></div>
-                    <div class="d-flex flex-column justify-content-center align-items-start">
-                        <p class="p-0 m-0">Anonymous Stiers 123</p>
-                        <p class="p-0 m-0 primary-fs">John Paul Barcinilla</p>
-                    </div>
-                    <div class="flex-grow-1"></div>
-                    <div class="flex gap-1">
-                        <button class="bg-info col btn border-0 rounded p-2"><i class="bi text-white bi-person-square"></i></button>
-                        <button class="bg-primary col btn border-0 rounded p-2"><i class="bi text-white bi-pencil-square"></i></button>
-                        <button class="bg-success col btn border-0 rounded p-2"><i class="bi text-white bi-mic-mute-fill"></i></button>
-                        <button class="bg-danger col btn border-0 rounded p-2"><i class="bi text-white bi-ban-fill"></i></button>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center bg-light p-2 rounded-1 shadow-sm">
-                    <div class="bg-danger me-3" style="height: 20px; width: 20px"></div>
-                    <div class="d-flex flex-column justify-content-center align-items-start">
-                        <p class="p-0 m-0">Anonymous Stiers 123</p>
-                        <p class="p-0 m-0 primary-fs">John Paul Barcinilla</p>
-                    </div>
-                    <div class="flex-grow-1"></div>
-                    <div class="flex gap-1">
-                        <button class="bg-info col btn border-0 rounded p-2"><i class="bi text-white bi-person-square"></i></button>
-                        <button class="bg-primary col btn border-0 rounded p-2"><i class="bi text-white bi-pencil-square"></i></button>
-                        <button class="bg-success col btn border-0 rounded p-2"><i class="bi text-white bi-mic-mute-fill"></i></button>
-                        <button class="bg-danger col btn border-0 rounded p-2"><i class="bi text-white bi-ban-fill"></i></button>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center bg-light p-2 rounded-1 shadow-sm">
-                    <div class="bg-danger me-3" style="height: 20px; width: 20px"></div>
-                    <div class="d-flex flex-column justify-content-center align-items-start">
-                        <p class="p-0 m-0">Anonymous Stiers 123</p>
-                        <p class="p-0 m-0 primary-fs">John Paul Barcinilla</p>
-                    </div>
-                    <div class="flex-grow-1"></div>
-                    <div class="flex gap-1">
-                        <button class="bg-info col btn border-0 rounded p-2"><i class="bi text-white bi-person-square"></i></button>
-                        <button class="bg-primary col btn border-0 rounded p-2"><i class="bi text-white bi-pencil-square"></i></button>
-                        <button class="bg-success col btn border-0 rounded p-2"><i class="bi text-white bi-mic-mute-fill"></i></button>
-                        <button class="bg-danger col btn border-0 rounded p-2"><i class="bi text-white bi-ban-fill"></i></button>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center bg-light p-2 rounded-1 shadow-sm">
-                    <div class="bg-danger me-3" style="height: 20px; width: 20px"></div>
-                    <div class="d-flex flex-column justify-content-center align-items-start">
-                        <p class="p-0 m-0">Anonymous Stiers 123</p>
-                        <p class="p-0 m-0 primary-fs">John Paul Barcinilla</p>
-                    </div>
-                    <div class="flex-grow-1"></div>
-                    <div class="flex gap-1">
-                        <button class="bg-info col btn border-0 rounded p-2"><i class="bi text-white bi-person-square"></i></button>
-                        <button class="bg-primary col btn border-0 rounded p-2"><i class="bi text-white bi-pencil-square"></i></button>
-                        <button class="bg-success col btn border-0 rounded p-2"><i class="bi text-white bi-mic-mute-fill"></i></button>
-                        <button class="bg-danger col btn border-0 rounded p-2"><i class="bi text-white bi-ban-fill"></i></button>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center bg-light p-2 rounded-1 shadow-sm">
-                    <div class="bg-danger me-3" style="height: 20px; width: 20px"></div>
-                    <div class="d-flex flex-column justify-content-center align-items-start">
-                        <p class="p-0 m-0">Anonymous Stiers 123</p>
-                        <p class="p-0 m-0 primary-fs">John Paul Barcinilla</p>
-                    </div>
-                    <div class="flex-grow-1"></div>
-                    <div class="flex gap-1">
-                        <button class="bg-info col btn border-0 rounded p-2"><i class="bi text-white bi-person-square"></i></button>
-                        <button class="bg-primary col btn border-0 rounded p-2"><i class="bi text-white bi-pencil-square"></i></button>
-                        <button class="bg-success col btn border-0 rounded p-2"><i class="bi text-white bi-mic-mute-fill"></i></button>
-                        <button class="bg-danger col btn border-0 rounded p-2"><i class="bi text-white bi-ban-fill"></i></button>
-                    </div>
-                </div>
             </div>
         </div>
         
     </div>
-    <div class="col d-flex d-none d-lg-block flex-column bg-white shadow-sm rounded-1 p-3 gap-2 h-100">
+    <div id="user_profile" class="col d-flex d-none d-lg-block flex-column bg-white shadow-sm rounded-1 p-3 gap-2 h-100">
         <div class="d-flex justify-content-center flex-column shadow-sm rounded bg-light align-items-center">
             <p class="m-0 poppins-medium primary-fs w-100 text-start primary-color text-white p-1 ps-2">User profile</p>
             <div class="d-flex align-items-center py-3 flex-column">
@@ -118,3 +48,4 @@ $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
         </div>
     </div>
 </div>
+

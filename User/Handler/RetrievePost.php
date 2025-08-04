@@ -61,8 +61,8 @@ while ($row = mysqli_fetch_assoc($result)) {
     }
     
     $htmlContent .= '
-    <div data-post-id="' . $row['post_id'] . '" class="user_post bg-light rounded-2 shadow-sm border my-2 p-0 col-12 col-lg-9 d-flex flex-column overflow-hidden container flex-shrink-0">
-        <div id="PostCard_Header" class="bg-light m-0 d-flex justify-content-between p-2">
+    <div data-post-id="' . $row['post_id'] . '" class="user_post rounded-2 shadow-sm border my-2 p-0 col-12 col-lg-9 d-flex flex-column overflow-hidden container flex-shrink-0">
+        <div id="PostCard_Header" class="bg-white m-0 d-flex justify-content-between p-2">
             <p class="m-0 primary-fs">' . getUserDisplayName($row["account_id"]) . '</p>
  
             <p class="m-0 primary-fs">' . $row['post_date'] . '</p>

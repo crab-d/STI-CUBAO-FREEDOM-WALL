@@ -11,7 +11,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     $fullname = $row['user_firstname'] . ' ' . $row['user_lastname'];
 
     $users .= '
-    <div class="d-flex align-items-center bg-light p-2 rounded-1 shadow-sm user-data" data-user-id="'. $row['account_id'] .'" style="cursor: pointer">
+    <div class="d-flex align-items-center bg-light p-2 rounded-1 shadow-sm user-data" data-user-id="'. $row['account_id'] .'">
         <div class=" me-3" style="height: 20px; width: 20px; background-color: '. $row["profile_color"] .'"></div>
         <div class="d-flex flex-column justify-content-center align-items-start">
             <p class="p-0 m-0">'. $row["display_name"] .'</p>

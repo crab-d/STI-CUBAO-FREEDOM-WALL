@@ -31,19 +31,19 @@ $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
         <div class="d-flex justify-content-center flex-column shadow-sm rounded bg-light align-items-center">
             <p class="m-0 poppins-medium primary-fs w-100 text-start primary-color text-white p-1 ps-2">User profile</p>
             <div class="d-flex align-items-center py-3 flex-column">
-                <div class="rounded-circle mb-3" style="background-color: <?php echo $_SESSION['profile']?> ;height:10vh; width:10vh;" ></div>
-                <p class="fw-bold fs-6 m-0"><?php echo $_SESSION['display_name'] ?></p>
-                <p class="primary-fs m-0 text-black-50"><?php echo $Fullname ?></p>
+                <div id="profile_color" class="rounded-circle mb-3" style="height:10vh; width:10vh;" ></div>
+                <p id="profile_display_name" class="fw-bold fs-6 m-0"></p>
+                <p id="profile_full_name" class="primary-fs m-0 text-black-50"></p>
             </div>
         </div>
         <div class="d-flex justify-content-center flex-column shadow-sm rounded bg-light align-items-start">
             <p class="m-0 poppins-medium primary-fs w-100 text-start primary-color text-white p-1 ps-2">User Record</p>
             <div class="d-flex align-items-start p-3 flex-column">
-                <p class="primary-fs p-0 m-0">Report Count: <span class="fw-bold">2</span></p>
-                <p class="primary-fs p-0 m-0">Post Count: <span class="fw-bold">2</span></p>
-                <p class="primary-fs p-0 m-0">Message Count: <span class="fw-bold">2</span></p>
-                <p class="primary-fs p-0 m-0">Comment Count: <span class="fw-bold">2</span></p>
-                <p class="primary-fs p-0 m-0">Like Count: <span class="fw-bold">2</span></p>
+                <p id="profile_total_report"class="primary-fs p-0 m-0">Report Count: <span class="fw-bold"></span></p>
+                <p id="profile_total_post" class="primary-fs p-0 m-0">Post Count: <span class="fw-bold"></span></p>
+                <p id="profile_total_message"class="primary-fs p-0 m-0">Message Count: <span class="fw-bold"></span></p>
+                <p id="profile_total_comment"class="primary-fs p-0 m-0">Comment Count: <span class="fw-bold"></span></p>
+                <p id="profile_total_like"class="primary-fs p-0 m-0">Like Count: <span class="fw-bold"></span></p>
             </div>
         </div>
     </div>

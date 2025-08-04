@@ -60,6 +60,7 @@ $(document).ready(function () {
             alert("Please be mindful with your words.");
             return;
         }
+        $('#IPT_chatContent').val('');
 
         $.ajax({
             url: "../User/Handler/SendMessage.php",

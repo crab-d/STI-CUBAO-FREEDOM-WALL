@@ -10,7 +10,7 @@
         exit;
     }
 
-    $stmt = $conn_accounts->prepare("SELECT display_name FROM accounts WHERE display_name LIKE CONCAT('%', ?, '%') LIMIT 10");
+    $stmt = $conn_accounts->prepare("SELECT display_name FROM accounts WHERE display_name LIKE CONCAT('%', ?, '%') LIMIT 5");
     $stmt->bind_param("s", $query);
     $stmt->execute();
 

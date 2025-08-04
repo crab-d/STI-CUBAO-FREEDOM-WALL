@@ -31,16 +31,14 @@ include('../Admin/Handler/RetrieveCounts.php');
         <div class="col p-0 bg-light p-3 d-flex container m-0 row align-items-center flex-column overflow-scroll vh-100" id="content_container">
             <?php include '../Admin/Components/DashboardTotalCounts.php' ?>
             <?php include '../Admin/Components/UserManagement.php' ?>
-        </div>
-
-        
-        
-
-        
+        </div> 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
     <script src="../Admin/Function/ContainerContentChanger.js"></script>
+    <script src="../Admin/Function/FetchUsers.js"></script>
+    <script src="../Admin/Function/ViewUserProfile.js"></script>
+
     <script>
         $('#userDashboard').on('click', ()=>{
             window.location.href = "../User/UserDashboard.php"

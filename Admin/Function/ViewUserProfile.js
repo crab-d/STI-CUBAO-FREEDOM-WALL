@@ -12,6 +12,7 @@ $('#users_container').on('click', '#profile', function() {
             $('#profile_full_name').html(response.user_fullname)
             $('#profile_display_name').html(response.user_display_name)
             $('#profile_total_post span').html(response.user_total_post)
+            $('#public_total_message').html(response.user_total_chat)
         },
         error: function(xhr){
             console.log('stats ' + xhr.status)

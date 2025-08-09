@@ -10,7 +10,7 @@ include '../Session/SessionChecker.php';
     <title>User Dashboard</title>
     <link rel="icon" type="image/x-icon" href="../Resources/Image/Logo.jpg"/>
     <link rel="stylesheet" href="../Style/Style.css"/>
-     <link rel="stylesheet" href="../Resources/Font/Poppins.css"/>
+    <link rel="stylesheet" href="../Resources/Font/Poppins.css"/>
     <link rel="stylesheet" href="../Resources/Font/Poppins.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

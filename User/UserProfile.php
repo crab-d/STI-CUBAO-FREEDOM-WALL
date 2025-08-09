@@ -1,6 +1,6 @@
 <?php
 include '../User/Components/UserMetaData.php';
-include '../User/Handler/CreatePost.php';
+include '../User/Handler/Post_Create.php';
 
 $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
  
@@ -165,13 +165,15 @@ $Fullname = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
-    <script src="../User/Function/RetrievePostComment.js"></script>
-    <script src="../User/Function/RetrievePostOwned.js"></script>
-    <script src="../User/Function/ReplyComment.js"></script>
-    <script src="../User/Function/LikePost.js"></script>    
-    <script src="../User/Function/MentionUserFunction.js"></script>
-    <script src="../User/Function/HeaderTabFunction.js"></script>
-    <script src="../User/Function/deletePost.js"></script>
+    <script src="../User/Function/Profile_delete_post.js"></script>
+    <script src="../User/Function/Profile_Retrieve_Post.js"></script>
+
+    <!-- Reused Func for user owned post -->
+    <script src="../User/Function/Dashboard_Retrieve_Comments.js"></script>
+    <script src="../User/Function/Dashboard_ReplyComment.js"></script>
+    <script src="../User/Function/Dashboard_LikePost.js"></script>    
+    <script src="../User/Function/Dashboard_MentionUser.js"></script>
+    <script src="../User/Function/Dashboard_Header.js"></script>
 
     <script>
         $('#profile').on('click', ()=>{

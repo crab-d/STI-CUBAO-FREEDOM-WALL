@@ -20,6 +20,8 @@ switch ($notif_type) {
         $receiver_id = getReceiverID_reply($_POST['comment_ID']);
         break;
 }
+
+if ($sender_id == $receiver_id) return;
     
 date_default_timezone_set('Asia/Manila');
 $date = date("F j, Y h:i A");

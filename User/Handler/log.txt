@@ -1,5 +1,0 @@
-Array
-(
-    [post_ID] => 7
-    [notif_TYPE] => comment
-)

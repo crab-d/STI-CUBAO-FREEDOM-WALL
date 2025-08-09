@@ -33,7 +33,7 @@ if (mysqli_num_rows($result) > 0) {
                 break;
         }
         echo '
-        <div data-post-id='. $row['post_id']. ' class="my-1" style="cursor: pointer">
+        <div data-post-id='. $row['post_id']. ' class="my-1 w-100" style="cursor: pointer">
             <div class="d-flex flex-column align-items-start justify-content-center">
             <div style="font-size: 9px">'. $row['notif_date'] .'</div>
             <p class="w-100  p-2 m-0 border rounded bg-light primary-fs poppins-medium">' . $notif_icon . $account_data['sender_display_name'] . $notif_type . ' on your ' . $content_type .'</p>
